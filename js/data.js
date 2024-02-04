@@ -24,7 +24,7 @@ let data = [
     {
         id:"ELEA_ASSE", 
         title: "eLearning Website/Course (Level 3 Interactivity)", 
-        keywords: ["Corporate Project", "Web Design"],
+        keywords: ["Corporate Project", "Web Design", "LMS", "Team Leader"],
         year: "2021", 
         role: "I was responsible for developing the website. I also worked with and led a small team who developed an eLearning course using the aforementioned website.", 
         scope: "I was tasked with creating a website that could present eLearning content. The website was required to support MP4 and HTML media. Additionally, the site was required to be 508 compliant and SCORM conformant. Finally, the website had to have the ability to support <a href='https://community.articulate.com/articles/get-to-know-the-4-levels-of-e-learning' target='_blank'>Level 3 Interactivity</a>. In addition to making the site, I also worked on a team to develop a course that covered radar theory and operations.", 
@@ -37,7 +37,7 @@ let data = [
     {
         id:"COSMO_BRAND", 
         title: "Organic Coffee 3D Mockup", 
-        keywords: ["Personal Project", "3D Development", "Graphic Design"],
+        keywords: ["Personal Project", "3D Development", "Graphic Design", "Product Branding"],
         year: "2020", 
         role: "For this project, I invented a coffee brand named Cosmo's Organic Coffee. During the project lifecycle, I determined the goal, target audience, brand styling, and logo.", 
         scope: "I created this project because I wanted more practice creating 3D brand advertisements. Moreover, I wanted to make a coffee brand that looked modern and natural. I targeted adults ages 18+ years of age with mid-income ranges.", 
@@ -76,7 +76,7 @@ let data = [
     {
         id:"KIN_INP", 
         title: "Kinetic Input Product Branding", 
-        keywords: ["Freelance", "Web Design", "Graphic Design", "Video Editing"],
+        keywords: ["Freelance", "Web Design", "Graphic Design", "Video Editing", "Product Branding"],
         year: "2017", 
         role: "I developed the product branding for the startup company Kinetic Input.  Specifically, I created the website, logo, product demo presentation, demo videos, and set up social media accounts.", 
         scope: "The purpose of this product branding was to demonstrate to potential investors the capabilities of the software. Furthermore, the purpose of the software was to ensure individuals performed physical therapy exercises at home. The software would keep track of the number of reps per exercise and acceptable ranges of motions. Unacceptable ranges of motion were recorded and discussed at the end of the exercise.", 
@@ -89,7 +89,7 @@ let data = [
     {
         id:"FOUN_BALL", 
         title: "Foundations of Ballistics Vignettes", 
-        keywords: ["In-House Solution", "Video Editing"],
+        keywords: ["In-House Solution", "Video Editing","3D Development"],
         year: "2014", 
         role: "I worked with other developers to set up the 3D environment, render image stills, and animate several video vignettes.", 
         scope: "Our manager expressed the need to create video vignettes that explain the foundations of ballistics. In particular, our manager wanted us to incorporate 3D imagery and motion graphics to appeal to younger students ranging from ages 18-30.", 
@@ -106,7 +106,7 @@ let data = [
         year: "2013", 
         role: "I was responsible for developing a website and the gamification components for a radar course.", 
         scope: "I was tasked with creating a website that could play eLearning content. The website was required to support HTML media and SWFs. Additionally, the site was required to be 508 compliant and SCORM conformant so it could be uploaded to a locally managed LMS. Finally, the website had to contain gamification elements to promote learner motivation/engagement.", 
-        solution: "For this project, I wanted the user to feel like they were a part of a game-like world. Upon logging into the course, soldiers were presented with a map that contained various towns. Each town represented a mission (lesson) that must be completed in chronological order. Upon completing all missions, the student had the option to play a tower-defense game and print out their Certificate of Completion.<br><br>To further engage the student, I implemented an achievement system, where students could earn badges as they progressed throughout the course. I also created an Intel Point system, where students earned points as they correctly answered Check on Learning questions and completed missions. These points served as a form of currency. Finally, I created several characters that students could interact with during missions. The characters were intended for world-building and provided information about the fictitious country and tips on how to beat the tower-defense game.<br><br>I created XML files that auto-populated the course title, navigation menu, set the lesson/content order, specified the transcript/resources, and set Closed Captions. I also created XML files to dynamically change the text of the characters as needed. These files allowed developers the flexibility to reorder and modify lessons without having to wait for UI changes. We were able to reuse the interface for three other Radar-specific projects, which saved quite a bit of development time and money. Additionally, this project was demoed during several in-person tours of our facility and was widely liked by attendees.", 
+        solution: "For this project, I wanted the user to feel like they were a part of a game-like world. Upon logging into the course, students were presented with a map that contained various towns. Each town represented a mission (lesson) that must be completed in chronological order. Upon completing all missions, the student had the option to play a tower-defense game and print out their Certificate of Completion.<br><br>To further engage the student, I implemented an achievement system, where students could earn badges as they progressed throughout the course. I also created an Intel Point system, where students earned points as they correctly answered Check on Learning questions and completed missions. These points served as a form of currency. Finally, I created several characters that students could interact with during missions. The characters were intended for world-building and provided information about the fictitious country and tips on how to beat the tower-defense game.<br><br>I created XML files that auto-populated the course title, navigation menu, set the lesson/content order, specified the transcript/resources, and set Closed Captions. I also created XML files to dynamically change the text of the characters as needed. These files allowed developers the flexibility to reorder and modify lessons without having to wait for UI changes. We were able to reuse the interface for three other Radar-specific projects, which saved quite a bit of development time and money. Additionally, this project was demoed during several in-person tours of our facility and was widely liked by attendees.", 
         reflection: "We had just lost our main programmer and I volunteered to be the lead for this task. Needless to say, this was a huge learning curve. Although daunting, I did extensive planning on how everything would flow and function.<br><br>I enjoyed designing the world and coming up with the gamification components for this project. Seeing how all the components come together at the end was worth the effort. This was one of the most challenging projects that I have ever worked on. Hands down, this is by far this is my favorite project!",
         specialNote: true,
         imageRange: 5
@@ -115,7 +115,7 @@ let data = [
     {
         id:"CBY_SEC", 
         title: "Cyber Security Challenge Prototype", 
-        keywords: ["In-House Solution", "Instructional Design"],
+        keywords: ["In-House Solution", "Instructional Design", "Gamification"],
         year: "2012", 
         role: "I was responsible for designing and developing this cybersecurity awareness prototype.", 
         scope: "My supervisor expressed the need to create this prototype. The prototype was intended to be presented to our manager so that it could eventually replace our in-house cybersecurity training, which many employees described as <span class='emphasis2'>boring</span> and <span class='emphasis2'>lacking</span> in information. Moreover, the prototype was intended to fill the gap in our existing training by providing common cybersecurity-related problems. I was granted creative freedom to design the prototype as I saw fit.", 
@@ -127,13 +127,13 @@ let data = [
 
     {
         id:"ETH_COM", 
-        title: "Building Ethical Competence", 
-        keywords: ["Class Project", "Instructional Design", "Graphic Design"],
+        title: "Building Ethical Competence Project", 
+        keywords: ["Class Project", "Instructional Design", "Graphic Design", "3D Development"],
         year: "2012", 
         role: "This was an individual project for the Theories, Pedagogies, and Tools for Online Learning (EIPT 6433) class. The project was titled Building Ethical Competence.", 
         scope: "The parameters for this project were to create a distance-learning instructional design product of our choice that uses strategies from the <a href='https://edutechwiki.unige.ch/en/R2D2' target='_blank'>Read, Reflect, Display, and Do</a> (R2D2) model. Moreover, this model is used to increase problem-solving skills using various hands-on activities. For this project, I chose to teach about workplace ethics and how to recognize/respond to ethical dilemmas.", 
         solution: "I used two design interventions for this project. The first intervention was an online Community of Practice website.  The second intervention was a scenario-based simulation, where the student assisted other employees at a fictitious company that I created called SimTec. Based on the R2D2 model, I provided methods for reading and reflecting using online article/video reviews, case studies, eLearning, and simulation discussion. I also allowed students to display their understanding of the concepts using a workplace Observational Log Sheet. Finally, I allowed students to transfer this knowledge by letting them create their own Ethical Guidelines document. Students were then given the opportunity to summarize their individual experiences throughout the class via a podcast/videocast.", 
-        reflection: "This was one of my favorite projects that I worked on at OU, as I had the creative freedom to come up with my own virtual world where students could interact. I enjoy creating relatable characters and thought-provoking scenarios that leave a lasting impression on the student. I also had a lot of fun designing the logo, characters, and 3D environment.<br><br>We chose these design interventions because we felt they would provide a solid foundation for patients to recognize the factors of increasing blood glucose levels and apply what they've learned in a realistic environment. This project is a self-awareness tool for the OU Health Sciences Center. In addition, this project was entered into the OU Student Research & Performance Day and won a prize.",
+        reflection: "This was one of my favorite projects that I worked on at OU, as I had the creative freedom to come up with my own virtual world where students could interact. I enjoy creating relatable characters and thought-provoking scenarios that leave a lasting impression on the student. I also had a lot of fun designing the logo, characters, and 3D environment.",
         specialNote: false,
         imageRange: 6
     },
