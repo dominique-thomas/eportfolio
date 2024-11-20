@@ -60,7 +60,7 @@ const generatePortfolio = function () {
 
     htmlStr += `<div class="col-lg-4 col-md-6 portfolio-item">
       <div class="portfolio-wrap">
-        <a href="projects.html?id=${id}">
+        <a href="projects.html?id=${id}" title="${title}">
         <img src="images/${id}_thumb.jpg" class="img-fluid" alt="${title}">
         <div class="portfolio-info">
         

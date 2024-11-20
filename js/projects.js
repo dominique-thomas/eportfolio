@@ -84,21 +84,49 @@ const generatePage = function () {
   let htmlStr_scope = obj.scope;
   let hasSpecialNote = obj.specialNote;
   let htmlStr_reflection = obj.reflection;
+  let htmlStr_demo = "";
   let htmlStr_solution = obj.solution;
   let htmlStr_artifacts = "";
+
+  let demo = obj.demo;
+
+  if(demo !== undefined && demo !== null && demo.length > 0){
+     htmlStr_demo += "A live demo is available for this project (links will open in a new window).<br><br>";
+     if(obj.additional_demo !== undefined){
+      htmlStr_demo += obj.additional_demo + "<br><br>";
+     }
+     
+
+    if(demo.length === 1){
+      htmlStr_demo += `<a href="${demo[0].link}" class="btn btn-primary btn-lg shadow-sm" role="button" title='View Live Demo' target='_blank'>View Live Demo</a>`;
+    }else{
+
+      
+
+      for(var i=0; i < demo.length; i++){
+        htmlStr_demo +=  `<a href="${demo[i].link}" class="btn btn-primary btn-lg shadow-sm" role="button" title='View Live Demo (${demo[i].title})' target='_blank'>View Live Demo (${demo[i].title})</a> `
+      }
+     
+    }
+   
+  }else{
+    htmlStr_demo += "N/A";
+  }
+
   const imageFilenames = Array.from({
     length: obj.imageRange
   }, (_, index) => `images/${activeId}_${index.toString().padStart(3, '0')}.jpg`);
 
   obj.keywords.sort();
+  htmlStr_tags += "<span class='project-tags'>Project Tags:</span> ";  
   obj.keywords.forEach(element => {
-    htmlStr_tags += `<span class="badge bg-primary tag">${element}</span> `;
+    htmlStr_tags += `<span class="badge bg-secondary tag">${element}</span> `;
   });
 
   for (var i = 0; i < imageFilenames.length; i++) {
     const imageName = imageFilenames[i];
     htmlStr_artifacts += `<div class="col-lg-6 col-md-6 portfolio-item">      
-                                  <a href="${imageName}" data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-6 togglelb">                              
+                                  <a href="${imageName}" data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-6 togglelb" title="${htmlStr_title} Artifact ${i+1}">                              
                                     <div class="asset-wrap">                                                                    
                                       <img src="${imageName}" class="img-fluid" alt="Gallery Image ${i+1}">                                     
                                     </div> 
@@ -112,6 +140,7 @@ const generatePage = function () {
   $("#projectScope").html(htmlStr_scope);
   $("#projectSolution").html(htmlStr_solution);
   $("#projectReflection").html(htmlStr_reflection);
+  $("#projectDemo").html(htmlStr_demo);
   $("#projectArtifacts").html(htmlStr_artifacts);
   if(hasSpecialNote){
     $("#specialNote").removeClass("hidden");
