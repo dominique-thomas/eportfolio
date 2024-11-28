@@ -6,11 +6,11 @@ $(function () {
   $(document).scroll(function () {
 
     //Used to show/hide the Back to Top button
-    if ($(this).scrollTop() > 20) {
+    /*if ($(this).scrollTop() > 20) {
       $("#btn-back-to-top").css("display", "block");
     } else {
       $("#btn-back-to-top").css("display", "none");
-    }
+    }*/
   });
 
   var currentDate = new Date();

@@ -4,6 +4,8 @@
 
 //target='_blank'
 
+//Tags: ["Personal Projects", "Professional Projects", "Web Design", "Graphic Design", "Video Editing", "Product Branding", "Instructional Design", "Gamification", "Featured", "3D Development"]
+
 /*
    {
         id:"ETH_COM", 
@@ -24,7 +26,7 @@ let data = [
     {
         id:"DINN_SIMU", 
         title: "Pre-Dinner Prep Simulation", 
-        keywords: ["Personal Project", "Instructional Design", "Simulation"],
+        keywords: ["Personal Project", "Instructional Design", "Featured"],
         year: "2024", 
         role: "I designed and developed both the simulation and the website that hosts it.", 
         scope: "Recognizing the challenges of showcasing live simulations from past projects, I set out to create a new project that demonstrates my expertise in simulation development, utilizing the 3D game engine <a href='https://unity.com/' target='_blank' title='Unity'>Unity</a>. This project is designed for an audience aged 16 and older.", 
@@ -32,14 +34,14 @@ let data = [
         reflection: "I believe that simulations should strike a balance between realism and enjoyment. In this simulation, I opted for a relatable scenario to captivate a diverse audience. I attempted  to embody this philosophy by integrating informative elements such as a to-do list and  an instruction manual, as well as enjoyable elements such as exploration. My aim was to create an experience that is both informative and engaging to the student.<br><br>During the development process, I encountered challenges that tested my problem-solving skills. Despite facing obstacles, I persevered by finding workarounds.<br><br>This project was a lot of fun and offered me a rare opportunity to delve into simulation development using a game engine. It serves as a constant motivation for me to continually hone and refine my skills in this field.",
         demo: [{title: "", link: "https://dominique-thomas.github.io/pre_dinner_prep_simulation/"}],
         specialNote: false,
-        imageRange: 6
+        imageRange: 5
     },
 
 
     {
         id:"IMP_BIAS", 
         title: "Implicit Bias eLearning Website and Training", 
-        keywords: ["Personal Project", "Instructional Design", "Web Design", "Video Editing"],
+        keywords: ["Personal Project", "Instructional Design", "Web Design", "Video Editing", "Featured"],
         year: "2024", 
         role: "For this project, I designed and developed the website and videos. Additionally, I handled uploading and timing the closed captions (CC). I also set up and uploaded the training to SCORM Cloud, a Learning Management System (LMS).", 
         scope: "Given the limitations on showcasing live training from previous projects, I wanted to create a project that highlights my expertise in instructional design, multimedia design, and web design. This training is intended for a corporate training setting and can be conducted in a self-paced eLearning environment. The target audience for this project is individuals 18 and older.", 
@@ -54,7 +56,7 @@ let data = [
     {
         id:"UNA_TRAIN", 
         title: "Unanet eLearning Website/Micro-Course & Simulation", 
-        keywords: ["Personal Project", "Instructional Design", "Web Design", "Video Editing", "Simulation Development"],
+        keywords: ["Personal Project", "Instructional Design", "Web Design", "Video Editing", "Featured"],
         year: "2024", 
         role: "For this project, I modified the website I originally built for the <a href='projects.html?id=IMP_BIAS'>Implicit Biases</a> project. I also produced videos with closed captions (CC) and designed the final assessment simulation.", 
         scope: "I wanted to create a project that highlights my expertise in instructional design, multimedia design, and web design. This training is intended for a corporate training setting and can be conducted in a self-paced eLearning environment. The target audience for this project is individuals 18 and older.", 
@@ -69,7 +71,7 @@ let data = [
     {
         id:"ELEA_ASSE", 
         title: "eLearning Website/Course (Level 3 Interactivity)", 
-        keywords: ["Corporate Project", "Web Design", "Instructional Design", "LMS", "Team Leader"],
+        keywords: ["Professional Project", "Web Design", "Instructional Design"],
         year: "2021", 
         role: "I was responsible for developing the website. I also worked with and led a small team who developed an eLearning course using the aforementioned website.", 
         scope: "I was tasked with creating a website that could present eLearning content. The website was required to support MP4 and HTML media. Additionally, the site was required to be 508 compliant and SCORM conformant. Finally, the website had to have the ability to support <a href='https://community.articulate.com/articles/get-to-know-the-4-levels-of-e-learning' target='_blank' title='Level 3 Interactivity Overview'>Level 3 Interactivity</a>. In addition to making the site, I also worked on a team to develop a course that covered radar theory and operations.", 
@@ -97,7 +99,7 @@ let data = [
     {
         id:"VIRT_CLASS", 
         title: "eLearning Website/Course with Gamification", 
-        keywords: ["Corporate Project", "Gamification", "LMS", "Web Design"],
+        keywords: ["Professional Project", "Gamification", "Instructional Design", "Web Design"],
         year: "2019", 
         role: "I was the website developer for this project. I was also responsible for developing templates for developers to create Practical Exercises (PEs) and Check-on-Learning (CoL) content. Additionally, I developed the <a href='https://www.gamify.com/what-is-gamification' target='_blank' title='Gamification Overview'>gamification</a> component for this website. Finally, I worked with a team of developers to create eLearning course content using the aforementioned website and templates.", 
         scope: "For this project, I was required to create a responsive website that played eLearning content that taught tactical software. The supported media was MP4,  Adobe Small Web Format (SWFs), and HTML5 media. I was also required to make the site 508 Compliant and SCORM conformant. Finally, I was required to incorporate a gamification piece into the website that let students take a break from the training. My teammates used these assets to create a course that covered radar software.", 
@@ -111,7 +113,7 @@ let data = [
     {
         id:"CARR_HILL", 
         title: "Carriage Hills Christian Church Website", 
-        keywords: ["Freelance", "Web Design"],
+        keywords: ["Professional Project", "Web Design"],
         year: "2018", 
         role: "I developed the website for the <a href='chcclawton.com' target='_blank'>Carriage Hills Christian Church</a> (CHCC).", 
         scope: "The client requested that I create a website for the CHCC. The client specified that the site should consist of a Home, Sermons, Photo Album, Calendar, and Admin page.", 
@@ -125,7 +127,7 @@ let data = [
     {
         id:"KIN_INP", 
         title: "Kinetic Input Product Branding", 
-        keywords: ["Freelance", "Web Design", "Graphic Design", "Video Editing", "Product Branding"],
+        keywords: ["Professional Project", "Web Design", "Graphic Design", "Video Editing", "Product Branding"],
         year: "2017", 
         role: "I developed the product branding for the startup company Kinetic Input.  Specifically, I created the website, logo, product demo presentation, demo videos, and set up social media accounts.", 
         scope: "The purpose of this product branding was to demonstrate to potential investors the capabilities of the software. Furthermore, the purpose of the software was to ensure individuals performed physical therapy exercises at home. The software would keep track of the number of reps per exercise and acceptable ranges of motions. Unacceptable ranges of motion were recorded and discussed at the end of the exercise.", 
@@ -139,7 +141,7 @@ let data = [
     {
         id:"FOUN_BALL", 
         title: "Foundations of Ballistics Vignettes", 
-        keywords: ["In-House Solution", "Video Editing","3D Development"],
+        keywords: ["Professional Project", "Video Editing","3D Development"],
         year: "2014", 
         role: "I worked with other developers to set up the 3D environment, render image stills, and animate several video vignettes.", 
         scope: "Our manager expressed the need to create video vignettes that explain the foundations of ballistics. In particular, our manager wanted us to incorporate 3D imagery and motion graphics to appeal to younger students ranging from ages 18-30.", 
@@ -153,7 +155,7 @@ let data = [
     {
         id:"WEB_GAM", 
         title: "eLearning Website and Game", 
-        keywords: ["Corporate Project", "Graphic Design", "LMS", "Gamification"],
+        keywords: ["Professional Project", "Graphic Design", "Instructional Design", "Gamification"],
         year: "2013", 
         role: "I was responsible for developing a website and the gamification components for a radar course.", 
         scope: "I was tasked with creating a website that could play eLearning content. The website was required to support HTML media and SWFs. Additionally, the site was required to be 508 compliant and SCORM conformant so it could be uploaded to a locally managed LMS. Finally, the website had to contain gamification elements to promote learner motivation/engagement.", 
@@ -167,7 +169,7 @@ let data = [
     {
         id:"CBY_SEC", 
         title: "Cyber Security Challenge Prototype", 
-        keywords: ["In-House Solution", "Instructional Design", "Gamification"],
+        keywords: ["Professional Project", "Instructional Design", "Gamification"],
         year: "2012", 
         role: "I was responsible for designing and developing this cybersecurity awareness prototype.", 
         scope: "My supervisor expressed the need to create this prototype. The prototype was intended to be presented to our manager so that it could eventually replace our in-house cybersecurity training, which many employees described as <span class='emphasis2'>boring</span> and <span class='emphasis2'>lacking</span> in information. Moreover, the prototype was intended to fill the gap in our existing training by providing common cybersecurity-related problems. I was granted creative freedom to design the prototype as I saw fit.", 
@@ -181,7 +183,7 @@ let data = [
     {
         id:"ETH_COM", 
         title: "Building Ethical Competence Project", 
-        keywords: ["Class Project", "Instructional Design", "Graphic Design", "3D Development"],
+        keywords: ["Personal Project", "Instructional Design", "Graphic Design", "3D Development"],
         year: "2012", 
         role: "This was an individual project for the Theories, Pedagogies, and Tools for Online Learning (EIPT 6433) class. The project was titled Building Ethical Competence.", 
         scope: "The parameters for this project were to create a distance-learning instructional design product of our choice that uses strategies from the <a href='https://edutechwiki.unige.ch/en/R2D2' target='_blank' title='R2D2 Model'>Read, Reflect, Display, and Do</a> (R2D2) model. Moreover, this model is used to increase problem-solving skills using various hands-on activities. For this project, I chose to teach about workplace ethics and how to recognize/respond to ethical dilemmas.", 
@@ -195,7 +197,7 @@ let data = [
     {
         id:"ITS_SMR", 
         title: "ITS-SMR Project", 
-        keywords: ["Class Project", "Instructional Design", "Graphic Design", "Team Leader", "Award Winning"],
+        keywords: ["Personal Project", "Instructional Design", "Graphic Design"],
         year: "2011", 
         role: "I worked with a team of two others for my Instructional Design Theories and Multimedia Instruction (EIPT 6343) class project. The project was titled Intelligent Tutoring System, Self-Monitored Blood Glucose Records (ITS-SMR). I developed the design for the tutorial/simulation and helped develop the scenarios.", 
         scope: "My teammates and I were required to develop an instructional design product for newly diagnosed Type II diabetes patients. We were required to teach these patients how to read and use their self-monitored blood glucose records (SMR). We were also required to teach them about the effects of varying glucose levels on the body.", 

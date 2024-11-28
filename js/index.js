@@ -20,11 +20,12 @@ $(function () {
     }
 
     //Show/hide the Back to Top button    
-    if ($(this).scrollTop() > 20) {
+    /*if ($(this).scrollTop() > 20) {
     $("#btn-back-to-top").css("display", "block");
     } else {
       $("#btn-back-to-top").css("display", "none");
-    }
+    }*/
+ 
   });
 
   var currentDate = new Date();
@@ -57,11 +58,22 @@ const generatePortfolio = function () {
     let id = data[i].id;
     let title = data[i].title;
     let year = data[i].year;
+    let keywords = data[i].keywords;
+    let featuredStar = "";
 
-    htmlStr += `<div class="col-lg-4 col-md-6 portfolio-item">
+    if(keywords.includes("Featured")){
+     //featuredStar += `<div><i class="fa fa-star featured-star"></i> Featured</div>`;
+    }
+
+    htmlStr += `<div class="col-lg-4 col-md-6 portfolio-item" data-tags="${keywords}">
+    ${featuredStar}
       <div class="portfolio-wrap">
+        
         <a href="projects.html?id=${id}" title="${title}">
-        <img src="images/${id}_thumb.jpg" class="img-fluid" alt="${title}">
+        <div class="portfolio-image-container">
+          <img src="images/${id}_thumb.jpg" class="img-fluid" alt="${title}">
+           <div class="overlay"></div>
+        </div>
         <div class="portfolio-info">
         
         <h4>${title}</h4>
@@ -77,19 +89,18 @@ const generatePortfolio = function () {
 }
 
 //Contact form Submit button handler
-$('#submitBtn').on('click', function () {
-  var name = $('#name').val();
-  var emailAddress = $('#emailAddress').val();
-  var message = $('#message').val();
+$("#submitBtn").on("click", function () {
+  var name = $("#name").val();
+  var emailAddress = $("#emailAddress").val();
+  var message = $("#message").val();
 
-  var subject = encodeURIComponent('Portfolio');
-  var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + emailAddress + '\nMessage: ' + message);
+  var subject = encodeURIComponent("Portfolio");
+  var body = encodeURIComponent("Name: " + name + "\nEmail: " + emailAddress + "\nMessage: " + message);
 
-  var mailtoLink = 'mailto:dominiquethomas@mailinator.com?subject=' + subject + '&body=' + body;
-  window.open(mailtoLink, '_blank');
+  var mailtoLink = "mailto:dominiquethomas@mailinator.com?subject=" + subject + "&body=" + body;
+  window.open(mailtoLink, "_blank");
 });
 
-//Animates the 'typing' text on page Hero
 if ($(".text-slider").length == 1) {
   var typed_strings = $(".text-slider-items").text();
   var typed = new Typed(".text-slider", {
@@ -106,7 +117,7 @@ const counterInit = function () {
   var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(",");
   $(".number").each(function () {
     var $this = $(this),
-      num = $this.data('number');
+      num = $this.data("number");
     $this.animateNumber({
       number: num,
       numberStep: comma_separator_number_step
@@ -114,3 +125,60 @@ const counterInit = function () {
   });
 }
 
+//Filter functionality
+$(".filter-option[data-filter='All']").trigger("click");
+
+  $(".filter-option").click(function(event) {
+    event.preventDefault(); 
+    
+    var filter = $(this).data("filter");
+
+    $(".filter-option").removeClass("active");
+    $(this).addClass("active");
+
+    if (filter === "All") {
+      $(".portfolio-item").fadeIn();
+    } else {
+
+      $(".portfolio-item").fadeOut();
+      $(".portfolio-item").each(function() {
+        var itemTags = $(this).data("tags").split(","); 
+        if (itemTags.includes(filter)) {
+          $(this).fadeIn();
+        }
+      });
+    }
+
+    $("#dropdownMenuButton").text("Filter by: " + (filter === "All" ?  "All" : filter));
+    $(".dropdown-menu").removeClass("show");
+  });
+
+  $("#dropdownMenuButton").click(function(event) {
+    event.stopPropagation();
+    $(".dropdown-menu").toggleClass("show");
+  });
+
+  $(document).click(function(event) {
+    if (!$(event.target).closest(".dropdown").length) {
+      $(".dropdown-menu").removeClass("show");
+    }
+  });
+
+var scrolled = false;
+
+$(window).on('scroll', function() {
+  var portfolioSectionTop = $('#portfolio').offset().top; 
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+
+  if (viewportBottom > portfolioSectionTop && !$('.portfolio-item').hasClass('fade-up')) {
+    $('.portfolio-item').each(function() {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      if (elementBottom > viewportTop && elementTop < viewportBottom) {
+        $(this).addClass('fade-up');
+      }
+    });
+  }
+});
