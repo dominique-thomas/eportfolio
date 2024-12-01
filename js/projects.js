@@ -3,16 +3,6 @@ let nextId = "";
 let prevId = "";
 
 $(function () {
-  $(document).scroll(function () {
-
-    //Used to show/hide the Back to Top button
-    /*if ($(this).scrollTop() > 20) {
-      $("#btn-back-to-top").css("display", "block");
-    } else {
-      $("#btn-back-to-top").css("display", "none");
-    }*/
-  });
-
   var currentDate = new Date();
   var year = currentDate.getFullYear();
   $("#currentYear").html(year);
@@ -118,7 +108,7 @@ const generatePage = function () {
   }, (_, index) => `images/${activeId}_${index.toString().padStart(3, '0')}.jpg`);
 
   obj.keywords.sort();
-  htmlStr_tags += "<span class='project-tags'>Project Tags:</span> ";  
+  
   obj.keywords.forEach(element => {
     htmlStr_tags += `<span class="badge bg-secondary tag">${element}</span> `;
   });

@@ -17,15 +17,7 @@ $(function () {
     //Animate fun fact div
    if ($(this).scrollTop() >= Math.round($("#portfolio").position().top - scrollOffset)) {
       counterInit();
-    }
-
-    //Show/hide the Back to Top button    
-    /*if ($(this).scrollTop() > 20) {
-    $("#btn-back-to-top").css("display", "block");
-    } else {
-      $("#btn-back-to-top").css("display", "none");
-    }*/
- 
+    } 
   });
 
   var currentDate = new Date();
@@ -60,10 +52,6 @@ const generatePortfolio = function () {
     let year = data[i].year;
     let keywords = data[i].keywords;
     let featuredStar = "";
-
-    if(keywords.includes("Featured")){
-     //featuredStar += `<div><i class="fa fa-star featured-star"></i> Featured</div>`;
-    }
 
     htmlStr += `<div class="col-lg-4 col-md-6 portfolio-item" data-tags="${keywords}">
     ${featuredStar}

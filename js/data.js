@@ -23,24 +23,24 @@
 
 let data = [
 
+    
     {
-        id:"DINN_SIMU", 
-        title: "Pre-Dinner Prep Simulation", 
-        keywords: ["Personal Project", "Instructional Design", "Featured"],
+        id:"UNA_TRAIN", 
+        title: "Unanet eLearning Website, Micro-Course, & Simulation", 
+        keywords: ["Personal Project", "Instructional Design", "Web Design", "Video Editing", "Featured"],
         year: "2024", 
-        role: "I designed and developed both the simulation and the website that hosts it.", 
-        scope: "Recognizing the challenges of showcasing live simulations from past projects, I set out to create a new project that demonstrates my expertise in simulation development, utilizing the 3D game engine <a href='https://unity.com/' target='_blank' title='Unity'>Unity</a>. This project is designed for an audience aged 16 and older.", 
-        solution: "I used the <i>Unity</i> game engine to help design a simulation centered around the experience of preparing for a dinner party. Students assume the role of a homeowner tasked with completing various party preparations, such as tidying up the living room and assembling a dining room table. The simulation offers high interactivity and exploration within the confines of the house, allowing students to click on labeled interactive areas to receive feedback. Some interactions require specific tools or materials to complete a task, adding depth to the experience.", 
-        reflection: "I believe that simulations should strike a balance between realism and enjoyment. In this simulation, I opted for a relatable scenario to captivate a diverse audience. I attempted  to embody this philosophy by integrating informative elements such as a to-do list and  an instruction manual, as well as enjoyable elements such as exploration. My aim was to create an experience that is both informative and engaging to the student.<br><br>During the development process, I encountered challenges that tested my problem-solving skills. Despite facing obstacles, I persevered by finding workarounds.<br><br>This project was a lot of fun and offered me a rare opportunity to delve into simulation development using a game engine. It serves as a constant motivation for me to continually hone and refine my skills in this field.",
-        demo: [{title: "", link: "https://dominique-thomas.github.io/pre_dinner_prep_simulation/"}],
+        role: "For this project, I modified the website I originally built for the <a href='projects.html?id=IMP_BIAS'>Implicit Biases</a> project. I also produced videos with closed captions (CC) and designed the final assessment simulation.", 
+        scope: "I wanted to create a project that highlights my expertise in instructional design, multimedia design, and web design. This training is intended for a corporate training setting and can be conducted in a self-paced eLearning environment. The target audience for this project is individuals 18 and older.", 
+        solution: "I created a series of videos to teach students about the legacy Unanet v. 22.1.6 web application. The training focused on the most commonly used components of the timesheet web application. Specifically, the videos covered tasks under the Time menu, such as creating, editing, previewing, and submitting timesheets, as well as adding project codes. The training also addressed tasks under the My Account menu, including changing passwords and logging out of the web application.<br><br>To complement the training, I developed a final assessment simulation that allows students to test their understanding of the tasks covered.  Once all tasks are completed, students can submit their work for grading.", 
+        reflection: "Unlike my previous project where I uploaded the course to a Learning Management System (LMS), this project mainly focused on the videos and software simulation. I leveraged a previously built webpage to save development time by updating the site's color scheme and adding new site features.<br><br>The final assessment simulation was both my favorite and most challenging part of the project. I pride myself on being detail-oriented, so I worked hard to closely replicate both the email and Unanet applications to ensure the simulation felt realistic. While I successfully recreated much of the functionality some elements were too time-consuming to implement in the HTML5 canvas.<br><br>Though this isn't my first simulation, it's one of the most detailed I've worked on in a while. The added attention to detail, combined with technical challenges, made the development process more time-consuming than I initially anticipated. Overall, I'm proud of how the project turned out.",
+        demo: [{link:"https://dominique-thomas.github.io/unanet_training/"}],
         specialNote: false,
-        imageRange: 5
+        imageRange: 7
     },
-
-
+    
     {
         id:"IMP_BIAS", 
-        title: "Implicit Bias eLearning Website and Training", 
+        title: "Implicit Bias eLearning Website & Micro-Course", 
         keywords: ["Personal Project", "Instructional Design", "Web Design", "Video Editing", "Featured"],
         year: "2024", 
         role: "For this project, I designed and developed the website and videos. Additionally, I handled uploading and timing the closed captions (CC). I also set up and uploaded the training to SCORM Cloud, a Learning Management System (LMS).", 
@@ -54,19 +54,18 @@ let data = [
     },
 
     {
-        id:"UNA_TRAIN", 
-        title: "Unanet eLearning Website/Micro-Course & Simulation", 
-        keywords: ["Personal Project", "Instructional Design", "Web Design", "Video Editing", "Featured"],
+        id:"DINN_SIMU", 
+        title: "Pre-Dinner Prep Simulation", 
+        keywords: ["Personal Project", "Instructional Design", "Featured"],
         year: "2024", 
-        role: "For this project, I modified the website I originally built for the <a href='projects.html?id=IMP_BIAS'>Implicit Biases</a> project. I also produced videos with closed captions (CC) and designed the final assessment simulation.", 
-        scope: "I wanted to create a project that highlights my expertise in instructional design, multimedia design, and web design. This training is intended for a corporate training setting and can be conducted in a self-paced eLearning environment. The target audience for this project is individuals 18 and older.", 
-        solution: "I created a series of videos to teach students about the legacy Unanet v. 22.1.6 web application. The training focused on the most commonly used components of the timesheet web application. Specifically, the videos covered tasks under the Time menu, such as creating, editing, previewing, and submitting timesheets, as well as adding project codes. The training also addressed tasks under the My Account menu, including changing passwords and logging out of the web application.<br><br>To complement the training, I developed a final assessment simulation that allows students to test their understanding of the tasks covered.  Once all tasks are completed, students can submit their work for grading.", 
-        reflection: "Unlike my previous project where I uploaded the course to a Learning Management System (LMS), this project mainly focused on the videos and software simulation. I leveraged a previously built webpage to save development time by updating the site's color scheme and adding new site features.<br><br>The final assessment simulation was both my favorite and most challenging part of the project. I pride myself on being detail-oriented, so I worked hard to closely replicate both the email and Unanet applications to ensure the simulation felt realistic. While I successfully recreated much of the functionality some elements were too time-consuming to implement in the HTML5 canvas.<br><br>Though this isn't my first simulation, it's one of the most detailed I've worked on in a while. The added attention to detail, combined with technical challenges, made the development process more time-consuming than I initially anticipated. Overall, I'm proud of how the project turned out.",
-        demo: [{link:"https://dominique-thomas.github.io/unanet_training/"}],
+        role: "I designed and developed both the simulation and the website that hosts it.", 
+        scope: "Recognizing the challenges of showcasing live simulations from past projects, I set out to create a new project that demonstrates my expertise in simulation development, utilizing the 3D game engine <a href='https://unity.com/' target='_blank' title='Unity'>Unity</a>. This project is designed for an audience aged 16 and older.", 
+        solution: "I used the <i>Unity</i> game engine to help design a simulation centered around the experience of preparing for a dinner party. Students assume the role of a homeowner tasked with completing various party preparations, such as tidying up the living room and assembling a dining room table. The simulation offers high interactivity and exploration within the confines of the house, allowing students to click on labeled interactive areas to receive feedback. Some interactions require specific tools or materials to complete a task, adding depth to the experience.", 
+        reflection: "I believe that simulations should strike a balance between realism and enjoyment. In this simulation, I opted for a relatable scenario to captivate a diverse audience. I attempted  to embody this philosophy by integrating informative elements such as a to-do list and  an instruction manual, as well as enjoyable elements such as exploration. My aim was to create an experience that is both informative and engaging to the student.<br><br>During the development process, I encountered challenges that tested my problem-solving skills. Despite facing obstacles, I persevered by finding workarounds.<br><br>This project was a lot of fun and offered me a rare opportunity to delve into simulation development using a game engine. It serves as a constant motivation for me to continually hone and refine my skills in this field.",
+        demo: [{title: "", link: "https://dominique-thomas.github.io/pre_dinner_prep_simulation/"}],
         specialNote: false,
-        imageRange: 7
+        imageRange: 5
     },
-
 
     {
         id:"ELEA_ASSE", 
@@ -108,20 +107,6 @@ let data = [
         demo: [],
         specialNote: true,
         imageRange: 6
-    },
-
-    {
-        id:"CARR_HILL", 
-        title: "Carriage Hills Christian Church Website", 
-        keywords: ["Professional Project", "Web Design"],
-        year: "2018", 
-        role: "I developed the website for the <a href='chcclawton.com' target='_blank'>Carriage Hills Christian Church</a> (CHCC).", 
-        scope: "The client requested that I create a website for the CHCC. The client specified that the site should consist of a Home, Sermons, Photo Album, Calendar, and Admin page.", 
-        solution: "During each development phase, I presented my work to the client and received approval. I kept the client involved throughout the entire process, starting from initial planning to the final upload.<br><br>One feature that I added that really stood out was the use of JSON files. These files helped in-house developers update content for the Gallery, Sermon's page, and Calendar without needing to update the HTML files directly. This would save in-house developers several hours of development time and reduce the likelihood of page errors.", 
-        reflection: "This project taught me how to better document my development progress, create and follow a development schedule, and better organize my deliverable artifacts.",
-        demo: [],
-        specialNote: false,
-        imageRange: 2
     },
 
     {
