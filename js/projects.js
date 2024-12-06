@@ -117,8 +117,10 @@ const generatePage = function () {
     const imageName = imageFilenames[i];
     htmlStr_artifacts += `<div class="col-lg-6 col-md-6 portfolio-item">      
                                   <a href="${imageName}" data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-6 togglelb" title="${htmlStr_title} Artifact ${i+1}">                              
-                                    <div class="asset-wrap">                                                                    
+                                    <div class="asset-wrap">       
+                                    <div class="watermark"></div>                                                             
                                       <img src="${imageName}" class="img-fluid" alt="Gallery Image ${i+1}">                                     
+                                      
                                     </div> 
                                   </a>
                                 </div>`;
