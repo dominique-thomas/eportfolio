@@ -154,18 +154,18 @@ $(".filter-option[data-filter='All']").trigger("click");
 
 var scrolled = false;
 
-$(window).on('scroll', function() {
-  var portfolioSectionTop = $('#portfolio').offset().top; 
+$(window).on("scroll", function() {
+  var portfolioSectionTop = $("#portfolio").offset().top; 
   var viewportTop = $(window).scrollTop();
   var viewportBottom = viewportTop + $(window).height();
 
-  if (viewportBottom > portfolioSectionTop && !$('.portfolio-item').hasClass('fade-up')) {
-    $('.portfolio-item').each(function() {
+  if (viewportBottom > portfolioSectionTop && !$(".portfolio-item").hasClass("fade-in")) {
+    $(".portfolio-item").each(function() {
       var elementTop = $(this).offset().top;
       var elementBottom = elementTop + $(this).outerHeight();
 
       if (elementBottom > viewportTop && elementTop < viewportBottom) {
-        $(this).addClass('fade-up');
+        $(this).addClass("fade-in");
       }
     });
   }

@@ -207,6 +207,11 @@ li>a:hover {
   flex-direction: column;
   height: 100%;
   border-radius: 10px !important;
+  transition: transform 0.3s;
+}
+
+.card:hover{
+  border: 1px solid var(--primary-color);
 }
 
 .card-title {
@@ -216,11 +221,6 @@ li>a:hover {
 .card-text{
   font-size: .9em;
   padding: 0 10px 10px 10px;
-}
-
-.card:hover {
-  transform: none !important;
-  transition: none !important;
 }
 
 .icon-wrapper {
@@ -324,14 +324,11 @@ li>a:hover {
   border: 1px solid #eef2ff; 
   transition: border-color 0.3s ease; 
 }
+
 .center-form {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.card:hover{
-   border: 1px solid var(--primary-color);
 }
 
 .carousel-inner {
@@ -367,17 +364,11 @@ li>a:hover {
   padding: 100px 0;
   text-align: center;
   color: #fff;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-.page-funfact {
   border-top:var(--grey-border) 1px solid;
   background-image: url("../images/bg6.jpg");
   background: linear-gradient(to bottom, rgb(113, 106, 247) , var(--primary-color) );
 }
+
 
 .portfolio .portfolio-item {
   margin-bottom: 30px;
@@ -675,6 +666,7 @@ li>a:hover {
   display: flex;
   flex-direction: row;
 }
+
 .portfolio-image-container {
   position: relative;
   display: inline-block;
