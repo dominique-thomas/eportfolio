@@ -6,7 +6,7 @@ $(function () {
 
     //Animate progress on enter
      let animProgressBars = true;
-    if ($(this).scrollTop() >= Math.round($("#proficiencies").position().top - scrollOffset) && animProgressBars) {                        
+    if ($(this).scrollTop() >= Math.round($("#competencies").position().top - scrollOffset) && animProgressBars) {                        
         $("div.progress").find(".progress-bar").each(function(){
           $(this).css("width", $(this).attr("aria-valuenow") + "%");
           $(".progress-bar").addClass("animated");
