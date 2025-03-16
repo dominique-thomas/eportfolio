@@ -47,30 +47,34 @@ const generatePortfolio = function () {
   let htmlStr = "";
 
   for (var i = 0; i < data.length; i++) {
+
     let id = data[i].id;
+    let enabled = data[i].enabled;
     let title = data[i].title;
     let year = data[i].year;
     let keywords = data[i].keywords;
-    let featuredStar = "";
+    let featuredStar = "";    
 
-    htmlStr += `<div class="col-lg-4 col-md-6 portfolio-item" data-tags="${keywords}">
-    ${featuredStar}
-      <div class="portfolio-wrap">
-        
-        <a href="projects.html?id=${id}" title="${title}">
-        <div class="portfolio-image-container">
-          <img src="images/${id}_thumb.jpg" class="img-fluid" alt="${title}">
-           <div class="overlay"></div>
+    if(enabled){
+      htmlStr += `<div class="col-lg-4 col-md-6 portfolio-item" data-tags="${keywords}">
+      ${featuredStar}
+        <div class="portfolio-wrap">
+          
+          <a href="projects.html?id=${id}" title="${title}">
+          <div class="portfolio-image-container">
+            <img src="images/${id}_thumb.jpg" class="img-fluid" alt="${title}">
+            <div class="overlay"></div>
+          </div>
+          <div class="portfolio-info">
+          
+          <h4>${title}</h4>
+          <p>${year}</p>        
+          
+          </div>
         </div>
-        <div class="portfolio-info">
-        
-        <h4>${title}</h4>
-        <p>${year}</p>        
-        
-        </div>
-      </div>
-      </a>
-      </div>`
+        </a>
+        </div>`
+    }
   }
 
   $("#portfolioAssets").html(htmlStr);

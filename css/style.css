@@ -670,7 +670,7 @@ li>a:hover {
 .portfolio-image-container {
   position: relative;
   display: inline-block;
-  width: 100%; /* Ensure this matches your image size */
+  width: 100%; 
 }
 
 .portfolio-image {
@@ -686,4 +686,21 @@ li>a:hover {
   height: 100%;
   opacity: 0.2; 
   pointer-events: none; 
+}
+
+.number-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; 
+}
+
+.plus {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-color) !important; 
+  box-shadow: none;
 }

@@ -13,7 +13,7 @@ $(function () {
 });
 
 //Get the IDs for the next and previous projects
-const getNextAndPrevIds = function(){
+const getNextAndPrevIds = function() {
   let activeIdIndex = "";
   for (var i = 0; i < data.length; i++) {
     const id = data[i].id;
@@ -23,21 +23,35 @@ const getNextAndPrevIds = function(){
     }
   }
 
-  //Get previous id
-  if(activeIdIndex == 0){
-    prevId = data[data.length-1].id;
-  }else{
-    prevId = data[activeIdIndex-1].id;
+  // Get previous id (skip disabled slides)
+  let prevIdIndex = activeIdIndex - 1;
+  while (prevIdIndex >= 0 && !data[prevIdIndex].enabled) {
+    prevIdIndex--;
   }
-
-  //Get next id
-  if(activeIdIndex == data.length-1){
-    nextId = data[0].id;
-  }else{
-    nextId = data[activeIdIndex + 1].id;
+  if (prevIdIndex < 0) {
+    // If no enabled previous, wrap around to the last enabled one
+    prevIdIndex = data.length - 1;
+    while (!data[prevIdIndex].enabled) {
+      prevIdIndex--;
+    }
   }
+  const prevId = data[prevIdIndex].id;
 
-  //Update the links  
+  // Get next id (skip disabled slides)
+  let nextIdIndex = activeIdIndex + 1;
+  while (nextIdIndex < data.length && !data[nextIdIndex].enabled) {
+    nextIdIndex++;
+  }
+  if (nextIdIndex >= data.length) {
+    // If no enabled next, wrap around to the first enabled one
+    nextIdIndex = 0;
+    while (!data[nextIdIndex].enabled) {
+      nextIdIndex++;
+    }
+  }
+  const nextId = data[nextIdIndex].id;
+
+  // Update the links  
   $("#prevProject").attr("href", `projects.html?id=${prevId}`);
   $("#nextProject").attr("href", `projects.html?id=${nextId}`);
 };
@@ -131,7 +145,7 @@ const generatePage = function () {
   $("#projectRole").html(htmlStr_role);
   $("#projectScope").html(htmlStr_scope);
   $("#projectSolution").html(htmlStr_solution);
-  $("#projectReflection").html(htmlStr_reflection);
+  //$("#projectReflection").html(htmlStr_reflection);
   $("#projectDemo").html(htmlStr_demo);
   $("#projectArtifacts").html(htmlStr_artifacts);
   if(hasSpecialNote){

@@ -9,6 +9,7 @@
 /*
    {
         id:"ETH_COM", 
+        enabled: true,
         title: "Building Ethical Competence", 
         keywords: ["Class Project", "Instructional Design", "Graphic Design"],
         year: "2012", 
@@ -26,11 +27,11 @@ let data = [
     
     {
         id:"UNA_TRAIN", 
+        enabled: true,
         title: "Unanet eLearning Website, Training, & Simulation", 
         keywords: ["Personal Project", "Instructional Design", "Web Design", "Video Editing", "Featured"],
         year: "2024", 
         role: "For this project, I modified the website I originally built for the <a href='projects.html?id=IMP_BIAS'>Implicit Biases</a> project. I also produced videos with closed captions (CC) and designed the final assessment simulation.", 
-        scope: "I wanted to create a project that highlights my expertise in instructional design, multimedia design, and web design. This training is intended for a corporate training setting and can be conducted in a self-paced eLearning environment. The target audience for this project is individuals aged 18 and older.", 
         scope: "I wanted to create a project that highlights my expertise in instructional design, multimedia design, and web design. This training is intended for a corporate training setting and can be conducted in a self-paced eLearning environment. The target audience for this project is individuals aged 18 and older.", 
         solution: "I created a series of videos to teach students about the legacy Unanet v. 22.1.6 web application. The training focused on the most commonly used components of the timesheet web application. Specifically, the videos covered tasks under the Time menu, such as creating, editing, previewing, and submitting timesheets, as well as adding project codes. The training also addressed tasks under the My Account menu, including changing passwords and logging out of the web application.<br><br>In addition to the training, I developed a final assessment simulation that allows students to test their understanding of the tasks covered.  Once all tasks are completed, students can submit their work for grading.", 
         reflection: "Unlike my previous project where I uploaded my course to a Learning Management System (LMS), this project mainly focused on the videos and software simulation. I leveraged a previously built webpage to save development time by updating the site's color scheme and adding new site features.<br><br>The final assessment simulation was both my favorite and most challenging part of the project. I pride myself on being detail-oriented, so I worked hard to closely replicate both the email and Unanet applications to ensure the simulation felt realistic. While I successfully recreated much of the functionality some elements were too time-consuming to implement in the HTML5 canvas.<br><br>Though this isn't my first simulation, it's one of the most detailed I've worked on in a while. The added attention to detail, combined with technical challenges, made the development process more time-consuming than I initially anticipated. Overall, I'm proud of how the project turned out.",
@@ -41,6 +42,7 @@ let data = [
     
     {
         id:"IMP_BIAS", 
+        enabled: true,
         title: "Implicit Bias eLearning Website & Training", 
         keywords: ["Personal Project", "Instructional Design", "Web Design", "Video Editing", "Featured"],
         year: "2024", 
@@ -56,6 +58,7 @@ let data = [
 
     {
         id:"DINN_SIMU", 
+        enabled: true,
         title: "Pre-Dinner Prep Simulation", 
         keywords: ["Personal Project", "Instructional Design", "Featured"],
         year: "2024", 
@@ -70,6 +73,7 @@ let data = [
 
     {
         id:"ELEA_ASSE", 
+        enabled: true,
         title: "eLearning Website/Course (Level 3 Interactivity)", 
         keywords: ["Professional Project", "Web Design", "Instructional Design"],
         year: "2021", 
@@ -84,6 +88,7 @@ let data = [
 
     {
         id:"COSMO_BRAND", 
+        enabled: true,
         title: "Organic Coffee 3D Mockup", 
         keywords: ["Personal Project", "3D Development", "Graphic Design", "Product Branding"],
         year: "2020", 
@@ -98,6 +103,7 @@ let data = [
 
     {
         id:"VIRT_CLASS", 
+        enabled: false,
         title: "eLearning Website/Course with Gamification", 
         keywords: ["Professional Project", "Gamification", "Instructional Design", "Web Design"],
         year: "2019", 
@@ -112,6 +118,7 @@ let data = [
 
     {
         id:"KIN_INP", 
+        enabled: false,
         title: "Kinetic Input Product Branding", 
         keywords: ["Professional Project", "Web Design", "Graphic Design", "Video Editing", "Product Branding"],
         year: "2017", 
@@ -126,6 +133,7 @@ let data = [
 
     {
         id:"FOUN_BALL", 
+        enabled: false,
         title: "Foundations of Ballistics Vignettes", 
         keywords: ["Professional Project", "Video Editing","3D Development"],
         year: "2014", 
@@ -140,6 +148,7 @@ let data = [
 
     {
         id:"WEB_GAM", 
+        enabled: true,
         title: "eLearning Website and Game", 
         keywords: ["Professional Project", "Graphic Design", "Instructional Design", "Gamification"],
         year: "2013", 
@@ -154,6 +163,7 @@ let data = [
 
     {
         id:"CBY_SEC", 
+        enabled: true,
         title: "Cyber Security Challenge Prototype", 
         keywords: ["Professional Project", "Instructional Design", "Gamification"],
         year: "2012", 
@@ -168,6 +178,7 @@ let data = [
 
     {
         id:"ETH_COM", 
+        enabled: true,
         title: "Building Ethical Competence Project", 
         keywords: ["Personal Project", "Instructional Design", "Graphic Design", "3D Development"],
         year: "2012", 
@@ -182,6 +193,7 @@ let data = [
 
     {
         id:"ITS_SMR", 
+        enabled: true,
         title: "ITS-SMR Project", 
         keywords: ["Personal Project", "Instructional Design", "Graphic Design"],
         year: "2011", 
