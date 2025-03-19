@@ -24,6 +24,19 @@
 
 let data = [
 
+    {
+        id:"COMP_BRAND", 
+        enabled: true,
+        keywords: ["Personal Project", "Graphic Design", "Product Branding"],
+        title: "Blush & Ember Brand Guidelines", 
+        year: "2025", 
+        role: "For this project, I created a comprehensive branding guidelines packet for Blush & Ember, a fictitious luxury candle company. My work involved developing key brand elements that define the company's visual identity and ensuring consistency across all materials.", 
+        scope: "I created and documented the core branding components for Blush & Ember, including the company history, brand overview, logo icon styling, logo application rules, logo variations, typography, and color palette. The branding was crafted with the intent to position the organization as luxurious and elegant candle company.", 
+        solution: "The final branding guide encapsulates the essence of Blush & Ember, providing clear guidelines on logo usage, typography, and color scheme. I established rules for logo placement and application to ensure brand consistency across various platforms and materials. The color palette, typography, and visual elements were thoughtfully selected to convey reliability and clarity, strengthening the company's identity.", 
+        reflection: "",
+        specialNote: false,
+        imageRange: 10
+    },
     
     {
         id:"UNA_TRAIN", 
