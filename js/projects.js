@@ -83,6 +83,7 @@ const generatePage = function () {
   const obj = getObjData();
 
   let htmlStr_title = obj.title;
+  let htmlStr_subTitle = obj.year;
   let htmlStr_tags = "";
   let htmlStr_role = obj.role;
   let htmlStr_scope = obj.scope;
@@ -117,38 +118,43 @@ const generatePage = function () {
     htmlStr_demo += "N/A";
   }
 
-  const imageFilenames = Array.from({
-    length: obj.imageRange
-  }, (_, index) => `images/${activeId}_${index.toString().padStart(3, '0')}.jpg`);
-
+  const imageFilenames = Array.from(
+    { length: obj.imageRange }, 
+    (_, index) => `images/${activeId}_${index.toString().padStart(3, '0')}.png`
+  );
+  
   obj.keywords.sort();
   
   obj.keywords.forEach(element => {
     htmlStr_tags += `<span class="badge bg-secondary tag">${element}</span> `;
   });
-
+  
   for (var i = 0; i < imageFilenames.length; i++) {
     const imageName = imageFilenames[i];
+    const fallbackImageName = imageName.replace('.png', '.jpg');
+  
     htmlStr_artifacts += `<div class="col-lg-6 col-md-6 portfolio-item">      
-                                  <a href="${imageName}" data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-6 togglelb" title="${htmlStr_title} Artifact ${i+1}">                              
-                                    <div class="asset-wrap">       
-                                    <div class="watermark"></div>                                                             
-                                      <img src="${imageName}" class="img-fluid" alt="Gallery Image ${i+1}">                                     
-                                      
-                                    </div> 
-                                  </a>
-                                </div>`;
+                            <a href="${imageName}" data-toggle="lightbox" data-gallery="example-gallery" class="col-lg-6 togglelb" title="${htmlStr_title} Artifact ${i+1}"
+                               onerror="this.href='${fallbackImageName}';">                              
+                              <div class="asset-wrap">       
+                                <div class="watermark"></div>                                                             
+                                <img src="${imageName}" class="img-fluid" alt="Gallery Image ${i+1}" 
+                                     onerror="this.onerror=null; this.src='${fallbackImageName}'; this.closest('a').href='${fallbackImageName}';">
+                              </div> 
+                            </a>
+                          </div>`;
   }
-
+  
   $("#projectTitle").html(htmlStr_title);
+  $("#projectSubTitle").html(htmlStr_subTitle);
   $("#projectTags").html(htmlStr_tags);
   $("#projectRole").html(htmlStr_role);
   $("#projectScope").html(htmlStr_scope);
   $("#projectSolution").html(htmlStr_solution);
-  //$("#projectReflection").html(htmlStr_reflection);
   $("#projectDemo").html(htmlStr_demo);
   $("#projectArtifacts").html(htmlStr_artifacts);
-  if(hasSpecialNote){
+  
+  if (hasSpecialNote) {
     $("#specialNote").removeClass("hidden");
   }
 

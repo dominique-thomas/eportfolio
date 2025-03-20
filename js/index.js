@@ -62,7 +62,8 @@ const generatePortfolio = function () {
           
           <a href="projects.html?id=${id}" title="${title}">
           <div class="portfolio-image-container">
-            <img src="images/${id}_thumb.jpg" class="img-fluid" alt="${title}">
+         <img src="images/${id}_thumb.png" class="img-fluid" alt="${title}" 
+            onerror="this.onerror=null; this.src='images/${id}_thumb.jpg';">      
             <div class="overlay"></div>
           </div>
           <div class="portfolio-info">
