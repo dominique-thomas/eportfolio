@@ -1,3 +1,9 @@
+/*
+  Project: ePortfolio
+  Description: Main stylesheet for layout, typography, and responsive design.
+  Author: Dominique Thomas (github.com/dominique-thomas)
+  License: Shared publicly for demonstration purposes only. Reuse or redistribution not permitted without permission.
+*/
 :root {
   --primary-color: #4F46E5;
   --primary-hover-color: #453ECF;
