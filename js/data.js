@@ -1,3 +1,9 @@
+/**
+ * Project: ePortfolio
+ * Description: Stores structured data for page content such as text, images, and project metadata.
+ * Author: Dominique Thomas (github.com/dominique-thomas)
+ * License: Shared publicly for demonstration purposes only. Reuse or redistribution not permitted without permission.
+ */
 
 //class project, instructional design, graphic design, group leader, award winning
 //Corporate Project, personal project, gamification, video editing, in-house solution, LMS, FREELANCE
