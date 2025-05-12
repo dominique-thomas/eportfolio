@@ -1,3 +1,9 @@
+/**
+ * Project: ePortfolio
+ * Description: Primary JavaScript file handling interactivity and user interface enhancements.
+ * Author: Dominique Thomas (github.com/dominique-thomas)
+ * License: Shared publicly for demonstration purposes only. Reuse or redistribution not permitted without permission.
+ */
 let arr = ["about", "services", "portfolio", "contact"];
 let scrollOffset = 460;
 
