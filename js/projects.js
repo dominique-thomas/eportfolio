@@ -1,3 +1,9 @@
+/**
+ * Project: ePortfolio
+ * Description: Contains logic for dynamically displaying project data on the projects.html page.
+ * Author: Dominique Thomas (github.com/dominique-thomas)
+ * License: Shared publicly for demonstration purposes only. Reuse or redistribution not permitted without permission.
+ */
 let activeId = "";
 let nextId = "";
 let prevId = "";
