@@ -6,7 +6,7 @@ const portfolioOwner = {
     I also have a strong foundation in <span class="textEmphasis">front-end web development</span> that helps bring my projects to life. 
     I've worked across various industries to turn complex ideas into intuitive, learner-focused content.<br><br>
     When I'm not designing, you'll find me experimenting with new tools, digging into UI/UX, or coding up creative side projects. 
-    I'm all about solving problems with clarity and curiosity. Want to learn more or collaborate on a project?`,
+    I'm all about solving problems with clarity and curiosity. Want to learn more about me or collaborate on a project?`,
 
     linkedin: "https://www.linkedin.com/in/dominique-thomas-ab56b433/",
 
@@ -38,8 +38,10 @@ const portfolioOwner = {
         { number: 200, suffix: "+", label: "Projects Delivered" },
         { number: 30000, suffix: "+", label: "Creative Hours Logged" },
     ],
-
-    blogUrl: ""
+    
+    blogUrl: "https://softstack-notes.hashnode.dev/?source=top_nav_blog_home",
+    
+    youtubeUrl: "https://www.youtube.com/@thesoftstackstudio",
 };
 
 const categoryDisplayOrder = [

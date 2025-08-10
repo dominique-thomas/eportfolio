@@ -25,10 +25,10 @@
                         <li class="nav-item"><a href="#about" class="nav-link" title="About">About</a></li>
                         <li class="nav-item"><a href="#proficiencies" class="nav-link" title="Proficiencies">Proficiencies</a></li>
                         <li class="nav-item"><a href="#competencies" class="nav-link" title="Competencies">Competencies</a></li>
-                        <li class="nav-item"><a href="#featured" class="nav-link" title="Featured Work">Featured Work</a></li>
-                        <li class="nav-item hidden"><a href="" class="nav-link" title="Blog">Blog</a></li>
-                    </ul>
+                        <li class="nav-item"><a href="#featured" class="nav-link" title="Featured Work">Featured Work</a></li>                        
+                    </ul>                    
                 </div>
+                
             </div>
         </nav>
 
@@ -41,13 +41,13 @@
                         I'm a <span class="text-slider-items"></span>
                         <strong class="text-slider textEmphasis"></strong>
                     </p>
-                    <a href="#about" class="btn btn-primary my-2" title="Start Exploring">Start Exploring</a>
+                    <a href="#about" class="btn btn-primary my-2 bounce-hover" title="Start Exploring">Start Exploring <i class="explore-icon fa-solid fa-arrow-down"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- About -->
-        <section class="py-5 container" id="about">
+        <section class="py-5 container" id="about" data-aos="fade-up">
             <h2 class="sectionHeader">About</h2>
             <p id="about-content"></p>
         </section>
@@ -112,11 +112,18 @@
             </div>
         </div>
 
-
-
         <!-- Footer -->
-        <footer class="text-body-secondary py-3 text-center">
-            <p class="mb-1 footer">&copy; <span id="footerName"></span> <span id="currentYear"></span></p>
+        <footer class="text-body-secondary py-3 text-center footer-with-socials" id="footer">
+        <span>&copy; <span id="footerName"></span> <span id="currentYear"></span></span>        
+            <div id="footerSocials" class="footer-socials">
+                <a id="social-youtube" href="#" target="_blank" title="Softstack Studio" class="bounce-hover">
+                <img src="images/youtube-icon-size_24.png" alt="YouTube">
+                </a>
+
+                <a id="social-blog" href="#" target="_blank" title="Softstack Notes" class="bounce-hover">
+                    <img src="images/hashnode-icon-size_24.png" alt="Blog">
+                </a>
+            </div>
         </footer>
     </main>
 
