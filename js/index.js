@@ -164,7 +164,7 @@ function initCategoryFilter() {
   const pills = orderedKeys.map(key => {
     const label = projectCategories[key] || key;
     const isActive = key === activeCategoryKey ? "active" : "";
-    return `<button class="filter-btn ${isActive}" data-key="${key}" aria-pressed="${isActive ? "true" : "false"}">${label}</button>`;
+    return `<button class="filter-btn ${isActive}" title="${label}" data-key="${key}" aria-pressed="${isActive ? "true" : "false"}">${label}</button>`;
   }).join("");
 
   const $filter = $(`<div id="portfolioFilter" class="category-filter" role="tablist">${pills}</div>`);
@@ -184,6 +184,7 @@ function initCategoryFilter() {
     renderPortfolioByCategory();
   });
 }
+
 
 function renderPortfolioByCategory() {
  

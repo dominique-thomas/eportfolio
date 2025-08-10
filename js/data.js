@@ -1,6 +1,6 @@
 const portfolioOwner = {
     name: "Dominique Thomas",
-    about: `Hi, I'm Dominique!<br><br>
+    about: `Hi, I'm <span class="textEmphasis">Dominique</span>!<br><br>
     I'm an instructional designer with a creative edge and a passion for building engaging, tech-forward learning experiences.<br><br>
     With over 12 years of experience, I specialize in <span class="textEmphasis">eLearning development, multimedia production, and interactive simulations</span>. 
     I also have a strong foundation in <span class="textEmphasis">front-end web development</span> that helps bring my projects to life. 
