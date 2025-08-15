@@ -65,7 +65,7 @@ let data = [
         title: "Steady Talk Interview Simulation",
         year: "2025",
         keywords: ["Personal Project", "AI", "Instructional Design", "Web Design"],
-        description: "Browser-based interview simulation that helps users practice multiple interviews and build confidence with a realistic mentor.",
+        description: "Interview simulation that helps users practice multiple interviews and build confidence with a realistic mentor.",
         scope: "I built this project to help people build confidence and improve communication skills by practicing different interview scenarios in a realistic, low-pressure setting.",
         solution: "I created Steady Talk as a browser-based simulation that uses HeyGen for a realistic mentor voice and video, and TensorFlow with web speech APIs for speech recognition and head tracking. It supports multiple interview stages and lets users download transcripts for self-review.",
 
@@ -80,7 +80,7 @@ let data = [
         title: "Mentor Space Leadership Simulation",
         year: "2025",
         keywords: ["Personal Project", "Instructional Design", "AI", "Web Design"],
-        description: "Browser-based mentoring simulation where learners explore leadership skills with a single virtual mentor.",
+        description: "Mentoring simulation where learners explore leadership skills with a single virtual mentor.",
         scope: "I created this project to help people strengthen their leadership and soft skills by exploring communication, feedback, and conflict resolution in a guided, mentor-driven environment.",
         solution: "I built Mentor Space as a browser-based chat simulation where users take a short quiz to discover their leadership style, then interact with their virtual mentor. Using built-in chat options, users can ask for feedback on strengths and weaknesses, get personalized book or quote recommendations, and even ask leadership-related questions. Gemini powers the analysis and mentor responses, while the interface keeps the experience interactive and approachable.",
 
@@ -111,9 +111,8 @@ let data = [
         year: "2024",
         keywords: ["Personal Project", "Gamification", "Instructional Design"],
         description: "Unity-based 3D simulation where learners complete interactive household tasks while exploring a virtual home.",
-        scope: "I built this project to help learners develop problem-solving skills and task sequencing in a fun, game-like learning environment.",
-        solution: "I created a 3D interactive simulation using Unity where learners explore a virtual home, complete tasks like cleaning and assembling furniture, and interact with tools. The design balances playful exploration with structured feedback, keeping users engaged while learning.",
-
+        scope: "I built this project to practice creating a cohesive visual identity that positions Summit Solutions as a trusted, modern consulting partner.",
+        solution: "I designed and documented a full brand system, including logo styles, typography, and color palette, in a detailed guide to ensure consistent use across all platforms.",
         demo: [{link: "https://dominique-thomas.github.io/pre-dinner-prep-simulation/"}],
         specialNote: false,
         imageRange: 3
@@ -126,7 +125,7 @@ let data = [
         title: "VirtuCare Patient Simulation",
         year: "2025",
         keywords: ["Personal Project", "Instructional Design", "Web Design"],
-        description: "Browser-based simulation where healthcare professionals practice patient interviews with virtual patients.",
+        description: "Medical simulation where healthcare professionals practice patient interviews with virtual patients.",
         scope: "I built this project to help healthcare professionals improve their communication and diagnostic questioning skills in a safe, low-pressure environment.",
         solution: "I created VirtuCare as a browser-based simulation where users interview randomized virtual patients with varying symptoms and personalities. The system uses voice interaction and real-time feedback to highlight what details were captured or missed, encouraging reflective learning and skill growth.",
 
@@ -155,7 +154,7 @@ let data = [
         categoryKey: "EMERGING",
         title: "Daily Uplift PWA",
         year: "2025",
-        keywords: ["Personal Project", "Web Design", "Instructional Design"],
+        keywords: ["Personal Project", "Web Design"],
         description: "Lightweight progressive web app (PWA) delivering daily affirmations to keep users motivated and positive throughout the day.",
         scope: "I built this project to give users a simple, accessible way to stay motivated and focused through quick, uplifting daily messages.",
         solution: "I developed Daily Uplift as a mobile-friendly progressive web app that displays a new affirmation each day. The app uses a minimal design for easy navigation and works without sign-ins, making it quick and accessible for daily use.",
