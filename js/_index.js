@@ -32,7 +32,7 @@ $(function() {
     let possessive = displayName.endsWith("s") ? `${displayName}'` : `${displayName}'s`;
     
     $("#footerName").html(displayName);
-    $("#siteTitle").html(`${possessive} ePortfolio`);    
+    $("#siteTitle").html(`${possessive} ePortfolio`);
 
     enableBlogLink();
     initHeroAnimation();
@@ -64,9 +64,9 @@ function applyScrollAnimations() {
         '#about',                
         '#proficiencies .container',
         '#competencies .container',
-        '#portfolioAssets',
+        '#portfolioAssets',            
         '#stats-block',
-        '#final-cta'            
+        '#final-cta'    
     ];
 
     targets.forEach(sel => {
@@ -77,7 +77,7 @@ function applyScrollAnimations() {
         });
         }
     });
-    
+
     AOS.refresh();
 }
 
@@ -153,7 +153,7 @@ function generateCompetencies() {
 }
 
 function initCategoryFilter() {
-  
+
   const orderedKeys = categoryDisplayOrder.map(displayName => {
     return Object.keys(projectCategories)
       .find(key => projectCategories[key] === displayName);
@@ -184,6 +184,7 @@ function initCategoryFilter() {
     renderPortfolioByCategory();
   });
 }
+
 
 function renderPortfolioByCategory() {
  
@@ -239,14 +240,12 @@ function updateModalNavButtons() {
     $nextBtn.prop("disabled", false);
 
     $prevBtn.off("click").on("click", function() {
-        stopAllVideos();
         const prevIndex = (currentIndex - 1 + categoryProjects.length) % categoryProjects.length;
         activeId = categoryProjects[prevIndex].id;
         generateModalContent();
     });
 
     $nextBtn.off("click").on("click", function() {
-        stopAllVideos();
         const nextIndex = (currentIndex + 1) % categoryProjects.length;
         activeId = categoryProjects[nextIndex].id;
         generateModalContent();
@@ -257,167 +256,63 @@ function generateModalContent() {
     const obj = data.find(item => item.id === activeId);
     if (!obj) return;
 
-    // Title & Year
     $("#projectTitle").html(obj.title || "");
     $("#projectSubtitle").html(obj.year || "");
 
-    // Tags (keywords)
     const tagHTML = (obj.keywords || [])
         .map(tag => `<span class="badge tag me-2">${tag}</span>`)
         .join("");
     $("#projectTags").html(tagHTML);
 
-    // Render the media carousel
     renderProjectCarousel(obj || {});
 
-    // Special note toggle
     if (obj.specialNote) {
         $("#specialNote").removeClass("hidden");
     } else {
         $("#specialNote").addClass("hidden");
     }
 
-    // External Demo Links
     if (obj.demo && obj.demo.length > 0) {
-        let demoHTML  = obj.demo
-            .map(
-                d => `<a href="${d.link}" title="${d.title}" target="_blank" class="btn btn-outline-primary me-2 mb-2">${d.title || "View Demo"}</a>`
-            )
+        const demoHTML = obj.demo
+            .map(d => `<a href="${d.link}" target="_blank" class="btn me-2 mb-2">${d.title || "View Demo"}</a>`)
             .join("");
         $("#demoLinks").html(demoHTML).show();
     } else {
         $("#demoLinks").hide();
     }
 
-    // Unified description/details
-    const descHTML = `
-        <div class="project-description">
-            ${obj.details ? `<p>${obj.details}</p>` : ""}
-        </div>`;
-    $("#projectAbout").html(descHTML);
-
-    // Software tags (under visuals)
-    let softwareHTML = `<span class="software-label">Tools:</span>`;
-    softwareHTML += (obj.programs || [])
-        .map(p => `<span class="soft-tag">${p}</span>`)
-        .join("");
-    $("#softwareSection").html(softwareHTML);
+    const aboutText = [obj.role, obj.scope].filter(Boolean).join("<br><br>");
+    $("#projectAbout").html(aboutText || "");
+    $("#projectSolution").html(obj.solution || "");
 }
-
-// ---- Global helper so navigation & images work again ----
-function renderProjectCarousel(project) {
-    let html = "";
-
-    const hasVideos = project.videoUrls && project.videoUrls.length > 0;
-    const position = project.videoPosition || "end"; // "start" or "end"
-
-    // Prepend videos
-    if (hasVideos && position === "start") {
-        project.videoUrls.forEach(url => {
-            html += `
-            <div class="slide video-slide">
-                <iframe width="720" height="405"
-                    src="${url}" frameborder="0"
-                    allowfullscreen loading="lazy"></iframe>
-            </div>`;
-        });
-    }
-
-    // Add images
-    for (let i = 0; i < project.imageRange; i++) {
-        html += `
-        <div class="slide">
-            <img src="assets/${project.id}_${String(i).padStart(3, "0")}.jpg"
-                 alt="${project.title} image ${i + 1}">
-        </div>`;
-    }
-
-    // Append videos
-    if (hasVideos && position === "end") {
-        project.videoUrls.forEach(url => {
-            html += `
-            <div class="slide video-slide">
-                <iframe width="720" height="405"
-                    src="${url}" frameborder="0"
-                    allowfullscreen loading="lazy"></iframe>
-            </div>`;
-        });
-    }
-
-    $("#projectCarousel").html(html);
-
-    // 🔹 Reinitialize your carousel nav after injecting new slides
-    initCarouselControls();
-}
-
-
 
 function renderProjectCarousel(obj) {
     $("#carouselContainer").remove();
 
     const count = obj.imageRange || 0;
-    const hasVideos = obj.videoUrls && obj.videoUrls.length > 0;
-    const position = obj.videoPosition || "end"; // "start" or "end"
+    if (count === 0) return;
 
-    // Build slides dynamically
     let slides = "";
-
-    // --- Add videos first (if flagged) ---
-    if (hasVideos && position === "start") {
-        obj.videoUrls.forEach((url, i) => {
-            slides += `
-            <div class="carousel-slide ${i === 0 ? "active" : ""}">
-                <div class="video-wrapper">
-                    <iframe width="720" height="405"
-                        src="${url}" 
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                        loading="lazy"></iframe>
-                </div>
-            </div>`;
-        });
-    }
-
-    // --- Add images ---
     for (let i = 0; i < count; i++) {
-        const index = i.toString().padStart(3, "0");
+        const index = i.toString().padStart(3, '0');
         const pngPath = `images/${obj.id}_${index}.png`;
         const jpgPath = `images/${obj.id}_${index}.jpg`;
 
+        // Start with PNG and swap to JPG if PNG fails
         slides += `
-        <div class="carousel-slide ${(!hasVideos && i === 0) || (hasVideos && position === "end" && i === 0) ? "active" : ""}">
-            <img src="${pngPath}"
-                 onerror="this.onerror=null; this.src='${jpgPath}';"
-                 alt="Project Image ${i + 1}">
-        </div>`;
+      <div class="carousel-slide ${i === 0 ? "active" : ""}">
+        <img src="${pngPath}" 
+             onerror="this.onerror=null; this.src='${jpgPath}';" 
+             alt="Project Image ${i + 1}">
+      </div>`;
     }
 
-    // --- Add videos last (if flagged) ---
-    if (hasVideos && position === "end") {
-        obj.videoUrls.forEach(url => {
-            slides += `
-            <div class="carousel-slide">
-                <div class="video-wrapper">
-                    <iframe width="720" height="405"
-                        src="${url}" 
-                        frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                        loading="lazy"></iframe>
-                </div>
-            </div>`;
-        });
-    }
-
-    // --- Navigation Controls ---
-    const totalSlides = count + (hasVideos ? obj.videoUrls.length : 0);
-    const hasControls = totalSlides > 1;
-    const controls = hasControls
-        ? `
-      <button class="carousel-prev" aria-label="Previous" title="Previous">&#10094;</button>
-      <button class="carousel-next" aria-label="Next" title="Next">&#10095;</button>`
-        : "";
+    const hasControls = count > 1;
+    const controls = hasControls ?
+        `
+      <button class="carousel-prev" aria-label="Previous">&#10094;</button>
+      <button class="carousel-next" aria-label="Next">&#10095;</button>` :
+        "";
 
     const carouselHTML = `
     <div id="carouselContainer">
@@ -429,28 +324,26 @@ function renderProjectCarousel(obj) {
 
     $("#projectTags").after(carouselHTML);
 
-    // --- Carousel Controls ---
     if (hasControls) {
         let currentSlide = 0;
 
         $(".carousel-prev").click(() => {
-            stopAllVideos();
+            const total = count;
             $(".carousel-slide").removeClass("active");
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            currentSlide = (currentSlide - 1 + total) % total;
             $(".carousel-slide").eq(currentSlide).addClass("active");
         });
 
         $(".carousel-next").click(() => {
-            stopAllVideos();
+            const total = count;
             $(".carousel-slide").removeClass("active");
-            currentSlide = (currentSlide + 1) % totalSlides;
+            currentSlide = (currentSlide + 1) % total;
             $(".carousel-slide").eq(currentSlide).addClass("active");
         });
     }
 
     updateModalNavButtons();
 }
-
 
 function generateStatsBlock() {
     if (!portfolioOwner?.stats) return;
@@ -476,7 +369,7 @@ function generateFinalCTA() {
 
     const html = `
     <div class="container text-center py-5">
-      <h3 class="sectionHeader">Want to Learn More or Collaborate?</h3>
+      <h2 class="sectionHeader">Learn More or Collaborate?</h2>
       <a href="${linkedin}" target="_blank" class="btn btn-primary mt-3 bounce-hover" title="Let's Connect">Let's Connect <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   `;
@@ -502,6 +395,7 @@ function counterInit() {
     });
 }
 
+
 function initFooterSocials() {
   const hasBlog = !!portfolioOwner.blogUrl;
   const hasYouTube = !!portfolioOwner.youtubeUrl;
@@ -519,17 +413,4 @@ function initFooterSocials() {
   } else {
     $footer.removeClass("footer-centered").addClass("footer-with-socials");
   }
-}
-
-$(".btn-close, #projectModal").click(() => {
-    stopAllVideos();
-    $("#modalContainer").fadeOut(200);
-});
-
-
-function stopAllVideos() {
-    $(".video-wrapper iframe").each(function () {
-        const src = $(this).attr("src");
-        $(this).attr("src", src); 
-    });
 }

@@ -32,7 +32,7 @@
             </div>
         </nav>
 
-        <!-- Hero -->
+         <!-- Hero -->
         <section class="text-center cover" id="home">
             <div class="row py-lg-4 coverParagraph">
                 <div class="col-lg-10 col-md-8 mx-auto">
@@ -41,7 +41,8 @@
                         I'm a <span class="text-slider-items"></span>
                         <strong class="text-slider textEmphasis"></strong>
                     </p>
-                    <a href="#about" class="btn btn-primary my-2 bounce-hover" title="Start Exploring">Start Exploring <i class="explore-icon fa-solid fa-arrow-down"></i></a>
+                    <a href="#about" class="btn btn-primary my-2 bounce-hover" title="Start Exploring">Start Exploring
+                        <i class="explore-icon fa-solid fa-arrow-down"></i></a>
                 </div>
             </div>
         </section>
@@ -70,13 +71,12 @@
 
         <!-- Featured Work -->
         <section class="py-5 bg-body-tertiary" id="featured">
-        <div class="container">
-            <h2 class="sectionHeader">Featured Work</h2>
-            <div id="portfolioFilter" class="category-filter"></div>
-            <div id="portfolioAssets"></div>
-        </div>
+            <div class="container">
+                <h2 class="sectionHeader">Featured Work</h2>
+                <div id="portfolioFilter" class="category-filter"></div>
+                <div id="portfolioAssets"></div>
+            </div>
         </section>
-
 
         <section class="stats-block" id="stats-block"></section>
         <section class="final-cta" id="final-cta"></section>
@@ -90,26 +90,32 @@
                             <h5 id="projectTitle" class="modal-title">Title</h5>
                             <h6 id="projectSubtitle" class="modal-subtitle">2024</h6>
                         </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div id="projectTags"></div>
-                        <div id="projectDemo"></div>
+
 
                         <div class="alert alert-primary text-center hidden" id="specialNote">
                             The visuals presented here are conceptual recreations based on original products.
                         </div>
 
-                        <div id="demoLinks" class="mb-4"></div>
 
-                        <h4>Overview</h4>
+
+
+                        <h4>Description</h4>
                         <p id="projectAbout"></p>
-                        <h4>Results</h4>
-                        <p id="projectSolution"></p>
+
+                        <div id="demoLinks"></div>
+
+                        <div id="softwareSection" class="software-section">
+
+                        </div>
+
                     </div>
                     <div class="modal-footer justify-content-between bg-body-tertiary">
-                        <button type="button" class="btn btn-primary" id="prevProject">Previous Project</button>
-                        <button type="button" class="btn btn-primary" id="nextProject">Next Project</button>
+                        <button type="button" class="btn btn-primary" id="prevProject" title="Previous Project">Previous Project</button>
+                        <button type="button" class="btn btn-primary" id="nextProject" title="Next Project">Next Project</button>
                     </div>
                 </div>
             </div>
