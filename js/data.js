@@ -84,13 +84,13 @@ const programKeywords = {
 };
 
 const categoryDisplayOrder = [
-    "Instructional Design & Simulation",
+    "Instructional Design & Simulations",
     "Emerging Tech & Prototypes",
     "Visual & Multimedia Design"
 ];
 
 const projectCategories = {
-    "INSTRUCT_SIM": "Instructional Design & Simulation",
+    "INSTRUCT_SIM": "Instructional Design & Simulations",
     "EMERGING": "Emerging Tech & Prototypes",
     "VISUAL_MEDIA": "Visual & Multimedia Design"
 };
