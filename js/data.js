@@ -79,6 +79,7 @@ const programKeywords = {
     chatgpt: "ChatGPT",
     claude: "Claude",
     gemini: "Gemini",
+    vsCode: "Visual Studio Code",
     generativeAI: "Generative AI Tools",
     adobe3D: "Adobe Substance 3D / Dimension",
 };
@@ -214,6 +215,31 @@ let data = [
 
 
     // Emerging Technologies
+    {
+        id: "MICROSNAP",
+        categoryKey: "EMERGING",
+        title: "MicroSnap Builder",
+        year: "2025",
+        keywords: [
+            projectKeywords.webDesign,
+            projectKeywords.instructionalDesign,
+            projectKeywords.personal
+        ],
+        programs: [
+            programKeywords.vsCode,
+            programKeywords.webDesign
+        ],
+        description: "A lightweight web app for creating short, visual slide decks through a simple in-browser editor or JSON API.",
+        details: "Developed as a small HTML-based authoring tool for designing microlearning slide decks. The editor allows users to create, preview, and export slide decks directly in the browser, while the render API dynamically generates decks from JSON input. The project demonstrates front-end architecture for portable learning content creation.",
+        demo: [
+            { title: "Visit MicroSnap Builder", link: "https://microsnap-builder.netlify.app/" },
+            { title: "View Sample JSON", link: "https://microsnap-builder.netlify.app/microsnap_example.json" }
+        ],
+        specialNote: false,
+        videoUrls: [],
+        imageRange: 3
+    },
+
     {
         id: "VIRTU_CARE",
         categoryKey: "EMERGING",
