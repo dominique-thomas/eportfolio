@@ -3,159 +3,146 @@
 
 <head>
     <meta charset="utf-8">
-    <title id="siteTitle">ePortfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <title>ePortfolio</title>
+
+    <!-- Link previews (LinkedIn, Slack, etc.). These can't come from data.js, so edit them per owner -->
+    <meta name="description" content="Dominique Thomas designs learning experiences and the tools around them, from interactive content to the workflows behind it.">
+    <meta property="og:title" content="Dominique Thomas | ePortfolio">
+    <meta property="og:description" content="Learning experiences, simulations, and interactive tools.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-preview.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#" id="navbarBrand">ePortfolio</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end text-center" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#about" class="nav-link" title="About">About</a></li>
-                        <li class="nav-item"><a href="#proficiencies" class="nav-link" title="Proficiencies">Proficiencies</a></li>
-                        <li class="nav-item"><a href="#competencies" class="nav-link" title="Competencies">Competencies</a></li>
-                        <li class="nav-item"><a href="#featured" class="nav-link" title="Featured Work">Featured Work</a></li>                        
-                    </ul>                    
-                </div>
-                
-            </div>
-        </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-         <!-- Hero -->
-        <section class="text-center cover" id="home">
-            <div class="row py-lg-4 coverParagraph">
-                <div class="col-lg-10 col-md-8 mx-auto">
-                    <h1 class="intro-title fw-bold">Welcome to my ePortfolio!</h1>
-                    <p class="intro-tagline">
-                        I'm a <span class="text-slider-items"></span>
-                        <strong class="text-slider textEmphasis"></strong>
-                    </p>
-                    <a href="#about" class="btn btn-primary my-2 bounce-hover" title="Start Exploring">Start Exploring
-                        <i class="explore-icon fa-solid fa-arrow-down"></i></a>
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a href="#top" class="brand" id="brandName"></a>
+
+            <nav class="nav" aria-label="Main">
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#toolkit">Toolkit</a>
+                <a href="#contact">Let's connect</a>
+            </nav>
+
+            <button type="button" class="icon-btn menu-toggle" id="menuOpen" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" hidden>
+        <div class="wrap header-inner">
+            <span class="brand" id="menuBrandName"></span>
+            <button type="button" class="icon-btn" id="menuClose" aria-label="Close menu">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+        </div>
+        <nav class="mobile-nav" aria-label="Mobile">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#toolkit">Toolkit</a>
+            <a href="#contact">Let's connect</a>
+        </nav>
+        <div class="socials mobile-socials" id="menuSocials"></div>
+    </div>
+
+    <main id="main">
+        <!-- Hero -->
+        <section class="wrap hero" id="top">
+            <h1 class="hero-title" id="heroTitle"></h1>
+            <p class="hero-subline" id="heroSubline"></p>
+        </section>
+
+        <!-- Work -->
+        <section class="wrap work" id="work">
+            <h2 class="section-title">Featured project</h2>
+            <div id="featuredProject"></div>
+
+            <div class="more-work">
+                <h2 class="section-subtitle">More work</h2>
+                <div class="work-grid" id="workGrid"></div>
+                <div class="more-work-footer">
+                    <p class="blog-callout" id="blogCallout"></p>
+                    <button type="button" class="btn btn-outline" id="showMore" aria-expanded="false" aria-controls="workGrid"></button>
                 </div>
             </div>
         </section>
 
         <!-- About -->
-        <section class="py-5 container" id="about" data-aos="fade-up">
-            <h2 class="sectionHeader">About</h2>
-            <p id="about-content"></p>
-        </section>
-
-        <!-- Proficiencies -->
-        <section class="py-5 bg-body-tertiary" id="proficiencies">
-            <div class="container">
-                <h2 class="sectionHeader">Proficiencies</h2>
-                <div id="proficiencies-container"></div>
+        <section class="band about" id="about">
+            <div class="wrap">
+                <h2 class="section-title">About</h2>
+                <div class="about-text" id="aboutText"></div>
             </div>
         </section>
 
-        <!-- Competencies -->
-        <section class="py-5" id="competencies">
-            <div class="container">
-                <h2 class="sectionHeader">Competencies</h2>
-                <div id="competencies-container" class="row g-4 justify-content-center"></div>
-            </div>
+        <!-- Toolkit -->
+        <section class="wrap toolkit" id="toolkit">
+            <h2 class="section-title">Toolkit</h2>
+            <div class="toolkit-grid" id="toolkitGrid"></div>
         </section>
 
-        <!-- Featured Work -->
-        <section class="py-5 bg-body-tertiary" id="featured">
-            <div class="container">
-                <h2 class="sectionHeader">Featured Work</h2>
-                <div id="portfolioFilter" class="category-filter"></div>
-                <div id="portfolioAssets"></div>
-            </div>
+        <!-- Stats -->
+        <section class="stats" id="stats" aria-label="At a glance">
+            <div class="wrap stats-grid" id="statsGrid"></div>
         </section>
 
-        <section class="stats-block" id="stats-block"></section>
-        <section class="final-cta" id="final-cta"></section>
+        <!-- Contact -->
+        <section class="wrap contact" id="contact">
+            <div>
+                <h2 class="section-title" id="contactHeading"></h2>
+                <p class="contact-text" id="contactText"></p>
+            </div>
+            <a class="btn btn-primary" id="contactButton" target="_blank" rel="noopener"></a>
+        </section>
+    </main>
 
-        <!-- Modal Template -->
-        <div class="modal fade" id="projectModal" tabindex="-1">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="modal-container text-center">
-                            <h5 id="projectTitle" class="modal-title">Title</h5>
-                            <h6 id="projectSubtitle" class="modal-subtitle">2024</h6>
-                        </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" title="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="projectTags"></div>
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <span id="footerCopy"></span>
+            <div class="socials" id="footerSocials"></div>
+        </div>
+    </footer>
 
-
-                        <div class="alert alert-primary text-center hidden" id="specialNote">
-                            The visuals presented here are conceptual recreations based on original products.
-                        </div>
-
-
-
-
-                        <h4>Description</h4>
-                        <p id="projectAbout"></p>
-
-                        <div id="demoLinks"></div>
-
-                        <div id="softwareSection" class="software-section">
-
-                        </div>
-
-                    </div>
-                    <div class="modal-footer justify-content-between bg-body-tertiary">
-                        <button type="button" class="btn btn-primary" id="prevProject" title="Previous Project">Previous Project</button>
-                        <button type="button" class="btn btn-primary" id="nextProject" title="Next Project">Next Project</button>
-                    </div>
+    <!-- Project view -->
+    <dialog class="project-view" id="projectView" aria-labelledby="pvTitle">
+        <div class="pv-bar">
+            <div class="wrap pv-bar-inner">
+                <button type="button" class="pv-back" id="pvClose">Return</button>
+                <div class="pv-nav">
+                    <span class="pv-count" id="pvCount" aria-live="polite"></span>
+                    <button type="button" class="icon-btn" id="pvPrev" aria-label="Previous project">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button type="button" class="icon-btn" id="pvNext" aria-label="Next project">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
                 </div>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="text-body-secondary py-3 text-center footer-with-socials" id="footer">
-        <span>&copy; <span id="footerName"></span> <span id="currentYear"></span></span>        
-            <div id="footerSocials" class="footer-socials">
-                <a id="social-youtube" href="#" target="_blank" title="Softstack Studio" class="bounce-hover">
-                <img src="images/youtube-icon-size_24.png" alt="YouTube">
-                </a>
-
-                <a id="social-blog" href="#" target="_blank" title="Softstack Notes" class="bounce-hover">
-                    <img src="images/hashnode-icon-size_24.png" alt="Blog">
-                </a>
-            </div>
-        </footer>
-    </main>
-
-    <!-- Back to top button -->
-    <a href="#" class="btn btn-primary btn-floating btn-lg" id="btn-back-to-top" title="Back to Top">
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
+        <div class="pv-body" id="pvBody"></div>
+    </dialog>
 
     <!-- Scripts -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDYGWDY613"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PDYGWDY613');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-PDYGWDY613");
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/typed.min.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/index.js" defer></script>
 </body>
 
 </html>
