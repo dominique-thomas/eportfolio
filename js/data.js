@@ -153,35 +153,6 @@ let data = [
     },
 
     {
-        id: "UNA_TRAIN",
-        title: "Unanet eLearning Website, Training, & Simulation",
-        year: "2024",
-        keywords: [
-            projectKeywords.instructionalDesign,
-            projectKeywords.simulation,
-            projectKeywords.elearning,
-            projectKeywords.webDesign,
-            projectKeywords.personal
-        ],
-        programs: [
-            programKeywords.webDesign,
-            programKeywords.photoshop,
-            programKeywords.premierePro,
-            programKeywords.audition,
-            programKeywords.scorm
-        ],
-        description: "A responsive eLearning site combining tutorials, videos, and interactive simulations for mastering Unanet timesheet workflows.",
-        details: "Developed a comprehensive web-based training system that integrates video tutorials, assessments, and an interactive simulation to simplify Unanet timesheet processes. Designed visuals and interface components in Photoshop, edited and produced narration in Premiere Pro and Audition, and structured content for SCORM compliance to ensure seamless LMS integration. Focused on accessibility, clarity, and user-friendly progression to improve learner confidence and efficiency.",
-        demo: [
-            { title: "Visit Unanet Training Website", link: "https://dominique-thomas.github.io/unanet-training/" }
-        ],
-        blogPost: "",
-        specialNote: false,
-        videoUrls: [],
-        imageRange: 4
-    },
-
-    {
         id: "MENTOR_SPACE",
         title: "Mentor Space Leadership Simulation",
         year: "2025",
@@ -257,6 +228,57 @@ let data = [
     },
 
     {
+        id: "COMP_BRAND",
+        title: "Blush & Ember Brand Guidelines",
+        year: "2025",
+        keywords: [
+            projectKeywords.branding,
+            projectKeywords.graphicDesign,
+            projectKeywords.personal
+        ],
+        programs: [
+            programKeywords.canva,
+            programKeywords.photoshop
+        ],
+        description: "A complete branding guide for a luxury candle concept, outlining logo, color, and typography standards.",
+        details: "Developed a cohesive brand identity system for the fictional luxury candle company, Blush & Ember. Designed all visual components including logo variations, color palette, and typography hierarchy to ensure consistency across digital and print media. The final guide provides clear direction for maintaining a refined, high-end aesthetic across packaging and marketing materials.",
+        demo: [],
+        blogPost: "",
+        specialNote: false,
+        videoUrls: [],
+        imageRange: 10
+    },
+
+    {
+        id: "UNA_TRAIN",
+        title: "Unanet eLearning Website, Training, & Simulation",
+        year: "2024",
+        keywords: [
+            projectKeywords.instructionalDesign,
+            projectKeywords.simulation,
+            projectKeywords.elearning,
+            projectKeywords.webDesign,
+            projectKeywords.personal
+        ],
+        programs: [
+            programKeywords.webDesign,
+            programKeywords.photoshop,
+            programKeywords.premierePro,
+            programKeywords.audition,
+            programKeywords.scorm
+        ],
+        description: "A responsive eLearning site combining tutorials, videos, and interactive simulations for mastering Unanet timesheet workflows.",
+        details: "Developed a comprehensive web-based training system that integrates video tutorials, assessments, and an interactive simulation to simplify Unanet timesheet processes. Designed visuals and interface components in Photoshop, edited and produced narration in Premiere Pro and Audition, and structured content for SCORM compliance to ensure seamless LMS integration. Focused on accessibility, clarity, and user-friendly progression to improve learner confidence and efficiency.",
+        demo: [
+            { title: "Visit Unanet Training Website", link: "https://dominique-thomas.github.io/unanet-training/" }
+        ],
+        blogPost: "",
+        specialNote: false,
+        videoUrls: [],
+        imageRange: 4
+    },
+
+    {
         id: "DINN_SIMU",
         title: "Pre-Dinner Prep Simulation",
         year: "2024",
@@ -282,28 +304,6 @@ let data = [
         specialNote: false,
         videoUrls: [],
         imageRange: 3
-    },
-
-    {
-        id: "COMP_BRAND",
-        title: "Blush & Ember Brand Guidelines",
-        year: "2025",
-        keywords: [
-            projectKeywords.branding,
-            projectKeywords.graphicDesign,
-            projectKeywords.personal
-        ],
-        programs: [
-            programKeywords.canva,
-            programKeywords.photoshop
-        ],
-        description: "A complete branding guide for a luxury candle concept, outlining logo, color, and typography standards.",
-        details: "Developed a cohesive brand identity system for the fictional luxury candle company, Blush & Ember. Designed all visual components including logo variations, color palette, and typography hierarchy to ensure consistency across digital and print media. The final guide provides clear direction for maintaining a refined, high-end aesthetic across packaging and marketing materials.",
-        demo: [],
-        blogPost: "",
-        specialNote: false,
-        videoUrls: [],
-        imageRange: 10
     },
 
     {

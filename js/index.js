@@ -6,7 +6,7 @@ const mobileQuery = window.matchMedia("(max-width: 760px)");
 const featuredProject = data.find((p) => p.featured) || data[0];
 const projects = [featuredProject, ...data.filter((p) => p !== featuredProject)];
 
-const projectTypes = [projectKeywords.personal, projectKeywords.professional];
+const projectTypes = ["Personal Project", "Professional Project"];
 
 let moreWorkExpanded = false;
 let activeIndex = -1;
@@ -106,7 +106,7 @@ function renderHero() {
 
 function linkButtons(project, primaryClass) {
     const demos = (project.demo || []).map((d, i) => {
-        const label = i === 0 ? "Live demo" : d.title || "Live demo";
+        const label = d.label || (i === 0 ? "Live demo" : d.title || "Live demo");
         return `<a class="btn ${i === 0 ? primaryClass : "btn-outline"}" href="${esc(d.link)}" target="_blank" rel="noopener">${esc(label)}</a>`;
     });
 
@@ -343,6 +343,14 @@ function renderProjectView(project) {
         ? `<p class="pv-note">The visuals presented here are conceptual recreations based on original products.</p>`
         : "";
 
+    // "details" for one overview, or "scope" + "solution" for two short sections
+    const overview = project.details
+        ? `<h3>Overview</h3><p>${esc(project.details)}</p>`
+        : [
+            project.scope ? `<h3>The goal</h3><p>${esc(project.scope)}</p>` : "",
+            project.solution ? `<h3>My role</h3><p>${esc(project.solution)}</p>` : ""
+        ].join("") || `<h3>Overview</h3><p>${esc(project.description)}</p>`;
+
     const links = linkButtons(project, "btn-primary");
     const tools = (project.programs || []).map((tool) => `<li>${esc(tool)}</li>`).join("");
 
@@ -363,10 +371,7 @@ function renderProjectView(project) {
         </div>` : ""}
 
         <div class="wrap pv-content">
-            <div class="pv-overview">
-                <h3>Overview</h3>
-                <p>${esc(project.details || project.description)}</p>
-            </div>
+            <div class="pv-overview">${overview}</div>
             <aside class="pv-aside">
                 ${links ? `<div class="pv-links">${links}</div>` : ""}
                 ${tools ? `<div class="pv-tools"><h3>Tools</h3><ul>${tools}</ul></div>` : ""}

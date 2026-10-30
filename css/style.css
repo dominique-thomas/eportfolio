@@ -29,7 +29,7 @@
     --bg: color-mix(in srgb, var(--accent) 3%, #0e0f0e);
     --surface: color-mix(in srgb, var(--accent) 4%, #151615);
     --text: #eef0ec;
-    --text-soft: color-mix(in srgb, var(--accent) 8%, #c4c7c1);
+    --text-soft: color-mix(in srgb, var(--accent) 8%, #ffffff);
     --text-muted: color-mix(in srgb, var(--accent) 10%, #a1a59e);
     --border: color-mix(in srgb, var(--accent) 6%, #252825);
     --border-strong: color-mix(in srgb, var(--accent) 10%, #333733);
@@ -853,16 +853,14 @@ button {
     visibility: visible;
 }
 
+/* Box sizes to the screenshot itself, so the rounded corners and shadow land on the image */
 .pv-slide img {
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    border-radius: 10px;
-    box-shadow:
-        0 0 0 14px var(--tint-strong),
-        0 0 0 15px var(--border),
-        0 16px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .pv-slide iframe {
@@ -871,14 +869,10 @@ button {
     border: 0;
     border-radius: 10px;
     background: #000;
-    box-shadow:
-        0 0 0 14px var(--tint-strong),
-        0 0 0 15px var(--border);
 }
 
 .pv-thumbs {
     display: flex;
-    justify-content: safe center;
     gap: 12px;
     margin-top: 14px;
     padding-bottom: 4px;
@@ -987,6 +981,10 @@ button {
     color: var(--text-soft);
     font-size: 18px;
     line-height: 1.75;
+}
+
+.pv-overview p + h3 {
+    margin-top: 32px;
 }
 
 .pv-aside {
@@ -1386,24 +1384,12 @@ button {
     }
 
     .pv-stage {
-        position: relative;
-        aspect-ratio: 16 / 10;
-        max-height: 640px;
-        width: 100%;
-        touch-action: pan-y;
+        aspect-ratio: 4 / 3;
+        border-radius: var(--radius);
     }
 
-
     .pv-slide {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 16px;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.35s var(--ease), visibility 0.35s;
     }
 
     .pv-thumbs {
