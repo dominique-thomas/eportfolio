@@ -72,7 +72,9 @@ const projectKeywords = {
     threeD: "3D Design",
     gamification: "Gamification",
     professional: "Professional Project",
-    personal: "Personal Project"
+    personal: "Personal Project",
+    microlearning: "Microlearning",
+    automation: "Automation"
 };
 
 const programKeywords = {
@@ -98,8 +100,35 @@ const programKeywords = {
 let data = [
 
     {
-        id: "STEADY_TALK",
+        id: "MICRO_SNAP",
         featured: true,
+        title: "MicroSnap Builder",
+        year: "2025",
+        keywords: [
+            projectKeywords.microlearning,
+            projectKeywords.instructionalDesign,
+            projectKeywords.webDesign,
+            projectKeywords.automation,
+            projectKeywords.personal,
+        ],
+        programs: [
+            programKeywords.webDesign
+        ],
+        description: "A browser-based tool for building micro-lessons, onboarding snippets, and quick reference cards that export as a single HTML file.",
+        details: "Built to streamline how I create concise learning content, drawing on the microlearning principles I use in my design work. The tool includes an interactive editor for assembling small pieces of content, and it also supports generating slides from JSON for anyone who prefers an automated workflow. For more automated setups, a simple REST API accepts slide data as JSON and returns a ready-to-use HTML deck. Everything runs in the browser and exports as a single HTML file, making it easy to embed in internal sites, LMS modules, or authoring tools that support iframes.",
+        demo: [
+            { title: "Visit MicroSnap Builder", link: "https://microsnap-builder.netlify.app" },
+            { label: "Sample JSON", link: "https://microsnap-builder.netlify.app/microsnap_example.json" }
+        ],
+        blogPost: "",
+        specialNote: false,
+        videoUrls: [],
+        imageRange: 3
+    },
+
+    {
+        id: "STEADY_TALK",
+        featured: false,
         title: "Steady Talk Interview Simulation",
         year: "2025",
         keywords: [
@@ -116,7 +145,7 @@ let data = [
             programKeywords.generativeAI
         ],
         description: "An interactive interview simulation that helps users practice communication skills with a realistic virtual mentor.",
-        details: "Developed as a browser-based simulation integrating AI-driven mentor visuals and real-time speech recognition through web APIs. Supports multiple interview stages and transcript exports for self-assessment. Designed to help learners build confidence and communication fluency in a low-pressure, self-paced environment.",
+        details: "Developed as a browser-based simulation integrating HeyGen AI-driven mentor visuals and real-time speech recognition through web APIs. Supports multiple interview stages and transcript exports for self-assessment. Designed to help learners build confidence and communication fluency in a low-pressure, self-paced environment.",
         demo: [
             { title: "Visit Steady Talk Simulation", link: "https://dominique-thomas.github.io/steady-talk" }
         ],
@@ -194,7 +223,7 @@ let data = [
             programKeywords.webDesign
         ],
         description: "An augmented reality diagnostic tool guiding IT students through collaborative hardware troubleshooting exercises.",
-        details: "Developed as a guided AR learning experience that helps IT students build analytical troubleshooting skills in a hands-on, exploratory way. Users scan AR markers to reveal system checklists and take notes. Each session concludes with group discussion prompts and mentor-led analysis, reinforcing collaboration and critical thinking. Designed to merge real-world equipment with interactive digital scaffolding for authentic skill development.",
+        details: "Developed as a guided agumented reality (AR) learning experience that helps IT students build analytical troubleshooting skills in a hands-on, exploratory way. Users scan AR markers to reveal system checklists and take notes. Each session concludes with group discussion prompts and mentor-led analysis, reinforcing collaboration and critical thinking. Designed to merge real-world equipment with interactive digital scaffolding for authentic skill development.",
         demo: [
             { title: "Visit TroubleshootAR Prototype", link: "https://dominique-thomas.github.io/troubleshoot-ar/" }
         ],
@@ -225,28 +254,6 @@ let data = [
         specialNote: false,
         videoUrls: [],
         imageRange: 2
-    },
-
-    {
-        id: "COMP_BRAND",
-        title: "Blush & Ember Brand Guidelines",
-        year: "2025",
-        keywords: [
-            projectKeywords.branding,
-            projectKeywords.graphicDesign,
-            projectKeywords.personal
-        ],
-        programs: [
-            programKeywords.canva,
-            programKeywords.photoshop
-        ],
-        description: "A complete branding guide for a luxury candle concept, outlining logo, color, and typography standards.",
-        details: "Developed a cohesive brand identity system for the fictional luxury candle company, Blush & Ember. Designed all visual components including logo variations, color palette, and typography hierarchy to ensure consistency across digital and print media. The final guide provides clear direction for maintaining a refined, high-end aesthetic across packaging and marketing materials.",
-        demo: [],
-        blogPost: "",
-        specialNote: false,
-        videoUrls: [],
-        imageRange: 10
     },
 
     {
@@ -304,30 +311,7 @@ let data = [
         specialNote: false,
         videoUrls: [],
         imageRange: 3
-    },
-
-    {
-        id: "COSMO_BRAND",
-        title: "Cosmo's Organic Coffee 3D Mockup",
-        year: "2020",
-        keywords: [
-            projectKeywords.branding,
-            projectKeywords.graphicDesign,
-            projectKeywords.threeD,
-            projectKeywords.personal
-        ],
-        programs: [
-            programKeywords.adobe3D,
-            programKeywords.photoshop
-        ],
-        description: "A 3D product mockup series for a fictional organic coffee brand, featuring minimalist design and earthy tones.",
-        details: "Created a set of 3D product renders to visualize packaging concepts for a fictional coffee brand named after my late dog, Cosmo. Modeled and textured product scenes using Adobe's 3D suite and finalized visual refinements in Photoshop. Focused on natural materials, balance, and visual storytelling to create a brand-ready aesthetic that feels authentic and warm.",
-        demo: [],
-        blogPost: "",
-        specialNote: false,
-        videoUrls: [],
-        imageRange: 2
-    },
+    },    
 
     {
         id: "CBY_SEC",

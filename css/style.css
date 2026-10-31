@@ -830,9 +830,7 @@ button {
     max-height: 640px;
     width: 100%;
     overflow: hidden;
-    border: 1px solid var(--border);
     border-radius: 22px;
-    background: var(--tint-strong);
     touch-action: pan-y;
 }
 
