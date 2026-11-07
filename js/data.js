@@ -94,7 +94,10 @@ const programKeywords = {
     claude: "Claude",
     gemini: "Gemini",
     generativeAI: "Generative AI Tools",
-    adobe3D: "Adobe Substance 3D / Dimension"
+    adobe3D: "Adobe Substance 3D / Dimension",
+    heygen: "HeyGen",
+    geminiApi: "Gemini API",
+    firebase: "Firebase"
 };
 
 let data = [
@@ -142,10 +145,11 @@ let data = [
             programKeywords.webDesign,
             programKeywords.photoshop,
             programKeywords.premierePro,
-            programKeywords.generativeAI
+            programKeywords.generativeAI,
+            programKeywords.heygen
         ],
         description: "An interactive interview simulation that helps users practice communication skills with a realistic virtual mentor.",
-        details: "Developed as a browser-based simulation integrating HeyGen AI-driven mentor visuals and real-time speech recognition through web APIs. Supports multiple interview stages and transcript exports for self-assessment. Designed to help learners build confidence and communication fluency in a low-pressure, self-paced environment.",
+        details: "A browser-based interview simulation that walks learners through three stages: a prescreen interview, a hiring manager interview, and a team fit interview, each led by its own AI-generated interviewer created with HeyGen. Learners choose an industry (IT, healthcare, or industrial), and the questions are grounded in that field, so they can see how common interview questions stay similar while strong answers shift from one industry to the next. Real-time speech recognition lets learners respond out loud, with responses analyzed for industry-relevant keywords. Along the way, a virtual mentor guides learners, shares tips, and is available to chat, and transcripts can be exported for self-assessment.",   
         demo: [
             { title: "Visit Steady Talk Simulation", link: "https://dominique-thomas.github.io/steady-talk" }
         ],
@@ -195,10 +199,12 @@ let data = [
         programs: [
             programKeywords.webDesign,
             programKeywords.photoshop,
-            programKeywords.chatgpt
+            programKeywords.gemini,
+            programKeywords.geminiApi,
+            programKeywords.firebase            
         ],
         description: "A browser-based chat simulation where learners build leadership and communication skills through guided mentor interactions.",
-        details: "Developed as an interactive simulation where users are introduced to their virtual mentor, explore the mentor's leadership style, and then take a short quiz to reflect on their own approach. Afterward, learners engage in dynamic chat sessions where the mentor provides personalized feedback, book recommendations, and performance insights. Designed to promote reflection, soft-skill growth, and conversational learning in an approachable digital format.",
+        details: "An interactive leadership simulation where each virtual mentor has their own personality, shaped by their leadership style. Powered by a Gemini-based AI agent connected through API calls, mentors respond in character, sharing their own likes, dislikes, and perspectives, and even sending the occasional image, so conversations feel grounded and engaging. Learners can take a short quiz to discover their own leadership style, and their mentor then offers personalized insights, feedback, and book recommendations based on the results. To keep API costs manageable, a lightweight Firebase database tracks usage and limits the number of AI requests.",        
         demo: [
             { title: "Visit Mentor Space Simulation", link: "https://leadership-ai-project.web.app/" }
         ],

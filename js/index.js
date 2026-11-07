@@ -139,6 +139,15 @@ function renderFeatured() {
         </article>`;
 }
 
+const tagCounts = {};
+data.forEach((p) => topicTags(p).forEach((k) => (tagCounts[k] = (tagCounts[k] || 0) + 1)));
+
+function cardTags(project, count = 2) {
+    return [...topicTags(project)]
+        .sort((a, b) => tagCounts[a] - tagCounts[b])
+        .slice(0, count);
+}
+
 function renderMoreWork() {
     const others = projects.slice(1);
 
@@ -151,7 +160,7 @@ function renderMoreWork() {
                 <span class="work-card-title">${esc(p.title)}</span>
                 <span class="work-card-year">${esc(p.year)}</span>
             </div>
-            <span class="work-card-tags">${esc(topicTags(p).slice(0, 2).join(" · "))}</span>
+            <span class="work-card-tags">${esc(cardTags(p).join(" · "))}</span>
         </a>`).join("");
 
     $("#showMore").addEventListener("click", () => {
