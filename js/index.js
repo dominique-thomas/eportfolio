@@ -1,3 +1,14 @@
+/*
+  Project: ePortfolio
+  Description: Portfolio rendering, navigation, project galleries, and user interactions.
+  Author: Dominique Thomas (github.com/dominique-thomas)
+  License: Shared publicly for demonstration purposes only. Reuse or redistribution not permitted without permission.
+*/
+
+//----------------------------------
+//  Global Variables
+//----------------------------------
+
 const owner = portfolioOwner;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const mobileQuery = window.matchMedia("(max-width: 760px)");
@@ -14,11 +25,14 @@ let activeSlide = 0;
 let openedFromPage = false;
 
 
-/* ---------- Helpers ---------- */
+//----------------------------------
+//  Helpers
+//----------------------------------
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
+// Escape text for safe insertion into generated HTML
 function esc(value) {
     return String(value ?? "")
         .replace(/&/g, "&amp;")
@@ -28,38 +42,45 @@ function esc(value) {
         .replace(/'/g, "&#39;");
 }
 
+// Create a consistent anchor ID for each project
 function slugFor(project) {
     return "project-" + project.id.toLowerCase().replace(/_/g, "-");
 }
 
+// Hide an empty section and its navigation links
 function hideSection(id) {
     const section = document.getElementById(id);
     if (section) section.hidden = true;
     $$(`a[href="#${id}"]`).forEach((link) => (link.hidden = true));
 }
 
-// Tags without "Personal Project" / "Professional Project"
+// Get project tags excluding the project type
 function topicTags(project) {
     return (project.keywords || []).filter((k) => k && !projectTypes.includes(k));
 }
 
+// Get the personal or professional project label
 function projectType(project) {
     return (project.keywords || []).find((k) => projectTypes.includes(k)) || "";
 }
 
-// Tries .png first, then falls back to .jpg (same as the old site)
+// Build an image with a JPG fallback
 function imageTag(base, alt, attrs = "") {
     return `<img src="${base}.png" alt="${esc(alt)}" ${attrs}
         onerror="this.onerror=null; this.src='${base}.jpg';">`;
 }
 
+// Get the numbered image path for a project slide
 function slideBase(project, index) {
     return `images/${project.id}_${String(index).padStart(3, "0")}`;
 }
 
 
-/* ---------- Theme and page basics ---------- */
+//----------------------------------
+//  Portfolio Theme
+//----------------------------------
 
+// Apply the portfolio's configured theme and accent
 function applyTheme() {
     const theme = owner.theme || {};
     const root = document.documentElement;
@@ -67,6 +88,7 @@ function applyTheme() {
     root.dataset.theme = theme.mode === "dark" ? "dark" : "light";
 }
 
+// Populate the site title, branding, and social links
 function renderBasics() {
     const name = owner.name || "";
     const possessive = name.endsWith("s") ? `${name}'` : `${name}'s`;
@@ -83,9 +105,11 @@ function renderBasics() {
     $("#menuSocials").innerHTML = socials;
 }
 
+//----------------------------------
+//  Page Hero
+//----------------------------------
 
-/* ---------- Hero ---------- */
-
+// Display the hero headline and supporting text
 function renderHero() {
     const hero = owner.hero || {};
     let headline = esc(hero.headline);
@@ -101,9 +125,11 @@ function renderHero() {
     else $("#heroSubline").hidden = true;
 }
 
+//----------------------------------
+//  Projects
+//----------------------------------
 
-/* ---------- Work ---------- */
-
+// Build project demo and blog links
 function linkButtons(project, primaryClass) {
     const demos = (project.demo || []).map((d, i) => {
         const label = d.label || (i === 0 ? "Live demo" : d.title || "Live demo");
@@ -117,6 +143,7 @@ function linkButtons(project, primaryClass) {
     return demos.join("");
 }
 
+// Display the featured project
 function renderFeatured() {
     const p = featuredProject;
     const chips = topicTags(p).slice(0, 3).map((k) => `<li class="chip">${esc(k)}</li>`).join("");
@@ -142,12 +169,14 @@ function renderFeatured() {
 const tagCounts = {};
 data.forEach((p) => topicTags(p).forEach((k) => (tagCounts[k] = (tagCounts[k] || 0) + 1)));
 
+// Select the less common tags for project cards
 function cardTags(project, count = 2) {
     return [...topicTags(project)]
         .sort((a, b) => tagCounts[a] - tagCounts[b])
         .slice(0, count);
 }
 
+// Build the remaining project cards and controls
 function renderMoreWork() {
     const others = projects.slice(1);
 
@@ -183,6 +212,7 @@ function renderMoreWork() {
     if (!others.length) $(".more-work").hidden = true;
 }
 
+// Limit visible projects based on screen size
 function applyMoreWorkLimit() {
     const limits = owner.moreWork || {};
     const limit = mobileQuery.matches ? limits.mobile ?? 4 : limits.desktop ?? 6;
@@ -198,14 +228,18 @@ function applyMoreWorkLimit() {
 }
 
 
-/* ---------- About, toolkit, stats, contact ---------- */
+//----------------------------------
+//  Home Page Elements (About, Stats, Toolkit, etc.)
+//----------------------------------
 
+// Display the portfolio introduction
 function renderAbout() {
     const paragraphs = owner.about || [];
     if (!paragraphs.length) return hideSection("about");
     $("#aboutText").innerHTML = paragraphs.map((text) => `<p>${esc(text)}</p>`).join("");
 }
 
+// Display grouped skills and tools
 function renderToolkit() {
     const groups = owner.toolkit || [];
     if (!groups.length) return hideSection("toolkit");
@@ -219,6 +253,7 @@ function renderToolkit() {
         </div>`).join("");
 }
 
+// Build the portfolio statistics
 function renderStats() {
     const stats = owner.stats || [];
     if (!stats.length) return hideSection("stats");
@@ -234,6 +269,7 @@ function renderStats() {
         </div>`).join("");
 }
 
+// Animate a statistic to its target value
 function countUp(el) {
     const target = Number(el.dataset.count);
     const duration = 1200;
@@ -249,6 +285,7 @@ function countUp(el) {
     requestAnimationFrame(tick);
 }
 
+// Display contact information and the action link
 function renderContact() {
     const contact = owner.contact;
     if (!contact) return hideSection("contact");
@@ -266,12 +303,16 @@ function renderContact() {
 }
 
 
-/* ---------- Mobile menu ---------- */
+//----------------------------------
+//  Mobile Menu
+//----------------------------------
 
+// Set up mobile navigation and focus behavior
 function initMobileMenu() {
     const menu = $("#mobileMenu");
     const openButton = $("#menuOpen");
 
+    // Open the mobile navigation
     function open() {
         menu.hidden = false;
         document.body.classList.add("no-scroll");
@@ -279,6 +320,7 @@ function initMobileMenu() {
         $("#menuClose").focus();
     }
 
+    // Close the menu and optionally restore focus
     function close(restoreFocus = true) {
         if (menu.hidden) return;
         menu.hidden = true;
@@ -301,8 +343,11 @@ function initMobileMenu() {
 }
 
 
-/* ---------- Project view ---------- */
+//----------------------------------
+//  Project View
+//----------------------------------
 
+// Combine project screenshots and videos into slides
 function buildSlides(project) {
     const images = [];
     const total = project.imageRange || 0;
@@ -315,6 +360,7 @@ function buildSlides(project) {
     return project.videoPosition === "start" ? [...videos, ...images] : [...images, ...videos];
 }
 
+// Populate the selected project's detail view
 function renderProjectView(project) {
     const index = projects.indexOf(project);
     const next = projects[(index + 1) % projects.length];
@@ -403,6 +449,7 @@ function renderProjectView(project) {
     $("#pvNextTeaser")?.addEventListener("click", () => stepProject(1));
 }
 
+// Connect slide buttons and swipe navigation
 function bindSlideControls() {
     $$("#pvBody [data-slide]").forEach((button) => {
         button.addEventListener("click", () => goToSlide(Number(button.dataset.slide)));
@@ -428,6 +475,7 @@ function bindSlideControls() {
     stage.addEventListener("pointercancel", () => (startX = null));
 }
 
+// Switch the active slide and update its controls
 function goToSlide(index) {
     const slides = $$("#pvBody .pv-slide");
     if (!slides.length) return;
@@ -441,7 +489,7 @@ function goToSlide(index) {
     });
 }
 
-// Reloading the iframe is the simplest way to stop an embedded video
+// Stop embedded videos when changing slides
 function stopVideos() {
     $$("#pvBody iframe").forEach((frame) => {
         const src = frame.src;
@@ -449,6 +497,7 @@ function stopVideos() {
     });
 }
 
+// Open the selected project in the detail dialog
 function openProject(project) {
     const view = $("#projectView");
     activeIndex = projects.indexOf(project);
@@ -468,6 +517,7 @@ function openProject(project) {
     }
 }
 
+// Close the project dialog and restore page scrolling
 function closeView() {
     const view = $("#projectView");
     if (!view.open) return;
@@ -478,14 +528,14 @@ function closeView() {
     activeIndex = -1;
 }
 
-// Prev/next swap the URL without adding history entries,
-// so the browser Back button always returns to the page
+// Navigate between projects without adding history entries
 function stepProject(direction) {
     if (activeIndex < 0) return;
     const nextProject = projects[(activeIndex + direction + projects.length) % projects.length];
     location.replace(`#${slugFor(nextProject)}`);
 }
 
+// Return to the page or close a directly opened project
 function requestClose() {
     if (openedFromPage) {
         history.back();
@@ -495,6 +545,7 @@ function requestClose() {
     }
 }
 
+// Match the URL hash to the selected project
 function handleRoute() {
     const hash = location.hash.slice(1);
     const project = projects.find((p) => slugFor(p) === hash);
@@ -503,6 +554,7 @@ function handleRoute() {
     else closeView();
 }
 
+// Set up project navigation and dialog interactions
 function initProjectView() {
     const view = $("#projectView");
 
@@ -541,8 +593,11 @@ function initProjectView() {
 }
 
 
-/* ---------- Scroll effects ---------- */
+//----------------------------------
+//  Scroll Effects
+//----------------------------------
 
+// Set up statistic animations, section reveals, and active navigation
 function initScrollEffects() {
     // Count up stats when they come into view
     const counters = $$("[data-count]");
@@ -600,7 +655,9 @@ function initScrollEffects() {
 }
 
 
-/* ---------- Start ---------- */
+//----------------------------------
+//  Initialization
+//----------------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
     applyTheme();

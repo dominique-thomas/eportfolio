@@ -1,3 +1,13 @@
+/*
+  Project: ePortfolio
+  Description: Portfolio settings, keyword definitions, and project content.
+  Author: Dominique Thomas (github.com/dominique-thomas)
+  License: Shared publicly for demonstration purposes only. Reuse or redistribution not permitted without permission.
+*/
+
+//----------------------------------
+//  Portfolio Settings
+//----------------------------------
 const portfolioOwner = {
     name: "Dominique Thomas",
 
@@ -56,6 +66,9 @@ const portfolioOwner = {
     }
 };
 
+//----------------------------------
+//  Project Keywords
+//----------------------------------
 const projectKeywords = {
     ar: "Augmented Reality",
     vr: "Virtual Reality",
@@ -77,6 +90,9 @@ const projectKeywords = {
     automation: "Automation"
 };
 
+//----------------------------------
+//  Program Keywords
+//----------------------------------
 const programKeywords = {
     storyline: "Articulate Storyline 360",
     rise: "Articulate Rise 360",
@@ -100,6 +116,9 @@ const programKeywords = {
     firebase: "Firebase"
 };
 
+//----------------------------------
+//  Portfolio Projects
+//----------------------------------
 let data = [
 
     {
